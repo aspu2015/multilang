@@ -22,6 +22,8 @@ class DatabaseSeeder extends Seeder
         ]);
         //55.831903, 37.411961
         DB::table('universities')->insert([
+            'name' => 'ASU',
+            'description' => 'ASU - Astrakhan State University',
             'geolocationX'=>55.831903,
             'geolocationY'=>37.411961
         ]);
