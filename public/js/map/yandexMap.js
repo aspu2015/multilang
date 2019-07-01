@@ -40,7 +40,7 @@ $(document).ready(function(){
                     window.open('/info?id='+universityID);
                     
                  }
-                 objectManager.objects.events.add(['click'], onObjectClick);
+                 //objectManager.objects.events.add(['click'], onObjectClick);
                  
             });
             // console.log(allPlacemarks);

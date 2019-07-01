@@ -25,6 +25,14 @@ class UniversityCollection
                     "type"=>"Point",
                     "coordinates"=> $currentUniversity->getGeometryAsArray()
                 ],
+                "properties"=>[
+                    "balloonContentHeader"=>"<a href='/info?id=".$currentUniversity->id."'>".$currentUniversity->name." </a>",
+                    "balloonContentBody" => "",
+                    "balloonContentFooter" => "",
+                    "clusterCaption" => "",
+                    "hintContent" => ""
+                ]
+
             ];
         }
     }

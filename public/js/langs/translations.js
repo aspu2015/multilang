@@ -21,7 +21,7 @@ function onOptionClick(langName){
         console.log(langName == obj.langName);
         console.log('-----');
         if(obj.langName == langName){
-            $('#textBody').text = obj.text;
+            $('#textBody').text(obj.text);
         }
     }
 }
