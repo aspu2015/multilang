@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/api/geodata', 'UniversityController@getGeodata')->name('geodata');
+Route::get('/info', 'UniversityController@index')->name('UnievrsityInfo');

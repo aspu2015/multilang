@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\UniversityCollection;
 use App\University;
 
-class HomeController extends Controller
+class UniversityController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -15,7 +15,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -25,8 +25,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        
+        return view('UniversityInfo');
     }
 
+    public function getGeodata(){
+        $all = new UniversityCollection();
+        $all->fillFeatures(University::all());
+        return json_encode($all);
+    }
 }
 

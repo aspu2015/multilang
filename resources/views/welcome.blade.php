@@ -7,11 +7,11 @@
         <title>ASU</title>
 
         <!-- js -->
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.7/summernote.js"></script>
+        <script src="{{ asset('js/libs/jquery.js')}}"></script>
+        <script src="{{ asset('js/libs/bootstrap.js')}}"></script>
+        <script src="{{ asset('js/libs/summernote.js')}}"></script>
 
-        <script src="https://api-maps.yandex.ru/2.1/?apikey=1f0064eb-6c20-41d7-87b9-c25967a30cd1&lang=ru_RU" type="text/javascript">
+        <script src="https://api-maps.yandex.com/2.1/?apikey=1f0064eb-6c20-41d7-87b9-c25967a30cd1&lang=ru_RU" type="text/javascript">
         </script>
 
         <script src="{{ asset('js/map/yandexMap.js')}}"></script>
