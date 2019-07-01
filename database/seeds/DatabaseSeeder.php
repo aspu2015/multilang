@@ -13,11 +13,11 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         DB::table('languages')->insert([
-            'name'=>'en',
+            'langName'=>'en',
             'picturePath'=>''
         ]);
         DB::table('languages')->insert([
-            'name'=>'ru',
+            'langName'=>'ru',
             'picturePath'=>''
         ]);
         //55.831903, 37.411961

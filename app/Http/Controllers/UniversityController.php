@@ -26,13 +26,16 @@ class UniversityController extends Controller
      */
     public function index()
     {
-        
-        $avalibleLangs = Language::join('translations','translations.language_id','=','languages.id')
+        return view('UniversityInfo');
+    }
+
+    public function getLangs(){
+        $avalibleLangs = null;
+        if(isset($_GET['id']))
+            $avalibleLangs = Language::join('translations','translations.language_id','=','languages.id')
                                     ->where('university_id','=',$_GET['id'])
                                     ->get();
-        return view('UniversityInfo',[
-            'avalibleLangs' => $avalibleLangs
-        ]);
+        return json_encode($avalibleLangs);
     }
 
     public function getGeodata(){

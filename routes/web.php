@@ -21,3 +21,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/api/geodata', 'UniversityController@getGeodata')->name('geodata');
 Route::get('/info', 'UniversityController@index')->name('UnievrsityInfo');
+Route::get('/api/langs','UniversityController@getLangs')->name('avalibleLangs');
