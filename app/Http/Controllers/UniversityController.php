@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\UniversityCollection;
 use App\University;
+use App\Language;
 
 class UniversityController extends Controller
 {
@@ -26,7 +27,12 @@ class UniversityController extends Controller
     public function index()
     {
         
-        return view('UniversityInfo');
+        $avalibleLangs = Language::join('translations','translations.language_id','=','languages.id')
+                                    ->where('university_id','=',$_GET['id'])
+                                    ->get();
+        return view('UniversityInfo',[
+            'avalibleLangs' => $avalibleLangs
+        ]);
     }
 
     public function getGeodata(){
