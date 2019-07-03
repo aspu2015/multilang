@@ -14,7 +14,7 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('main');
 
 Auth::routes();
 
@@ -22,3 +22,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/api/geodata', 'UniversityController@getGeodata')->name('geodata');
 Route::get('/info', 'UniversityController@index')->name('UnievrsityInfo');
 Route::get('/api/langs','UniversityController@getLangs')->name('avalibleLangs');
+Route::get('/edit', 'UniversityController@edit')->name('editUniversity');

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.adminLayout')
 
 @section('content')
 <div class="container">
@@ -14,11 +14,41 @@
                         </div>
                     @endif
 
-                    You are logged in!123
-                    @foreach ($universities as $item)
-                        
-                        <br><hr><br>
-                    @endforeach
+                    <br>
+
+                    <button class="button" onclick="location.href = '/create';" >добавить университет</button>
+                    <br><br>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Название</th>
+                                <th scope="col">Краткое описание</th>
+                                <th scope="col">Количество переводов</th>
+                                <th scope="col">Редактировать</th>
+                                <th scope="col">Удалить</th>
+                            </tr>
+                        </thead>
+                        @foreach ($universities as $item)
+                            <tr>
+                                <td>
+                                    {{$item->name}}
+                                </td>
+                                <td>
+                                    {{$item->description}}
+                                </td>
+                                <td>
+                                    {{count($item->translation)}}
+                                </td>
+                                <td>
+                                    <a href="/edit?id={{$item->id}}">редактировать</a>
+                                </td>
+                                <td>
+                                    <a href="/delete?id={{$item->id}}">удалить</a>
+                                </td>
+                            </tr>
+                        @endforeach 
+                    </table>
+                    
                 </div>
             </div>
         </div>
