@@ -20,6 +20,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/api/geodata', 'UniversityController@getGeodata')->name('geodata');
-Route::get('/info', 'UniversityController@index')->name('UnievrsityInfo');
-Route::get('/api/langs','UniversityController@getLangs')->name('avalibleLangs');
-Route::get('/edit', 'UniversityController@edit')->name('editUniversity');
+Route::get('/university/info', 'UniversityController@index')->name('UniversityController.index');
+Route::get('/api/langs','UniversityController@getLangs')->name('UniversityController.getLangs');
+
+Route::get('/university/create','UniversityController@create')->name('UniversityController.create');
+Route::post('/university/store','UniversityController@store')->name('UniversityController.store');
+
+Route::get('/university/{id}/edit', 'UniversityController@edit')->middleware('auth')->name('UniversityControllerEdit');
+Route::put('/university/{id}/update', 'UniversityController@update')->middleware('auth')->name('UniversityController.update');
+
+Route::delete('/university/{id}/delete', 'UniversityController@delete')->middleware('auth')->name('UniversityController.delete');

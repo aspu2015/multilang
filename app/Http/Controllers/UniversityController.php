@@ -56,18 +56,43 @@ class UniversityController extends Controller
         return json_encode($all);
     }
 
-    public function edit(){
-        if(!Auth::user() || !isset($_GET['id']))
-            return redirect('/');
-        $currentUniversity = University::with('translation')->where('id','=',$_GET['id'])->get()[0];
-        // dd($currentUniversity);
+    public function edit($id){
+        $currentUniversity = University::with('translation')->find($id);
         return View('universities.UniversityEdit',[
             'university' => $currentUniversity
         ]);
     }
 
-    public function update(){
-        
+    public function update(Request $request, $id){
+        $university = University::find($id);
+        $university->name = $request->get('universityName');
+        $university->description = $request->get('universityDescription');
+        $university->geolocationX = $request->get('universityLatitude');
+        $university->geolocationY = $request->get('universityLongitude');
+        $university->save();
+        return redirect('/home');
+    }
+
+    public function create(){
+        return view('universities.UniversityCreate');
+    }
+
+    public function store(Request $request){
+        // dd( $request->get('name'););
+        $university = new \App\University;
+        $university->name = $request->get('universityName');
+        $university->description = $request->get('universityDescription');
+        $university->geolocationX = $request->get('universityLatitude');
+        $university->geolocationY = $request->get('universityLongitude');
+
+        $university->save();
+
+        return redirect('/home');
+    }
+
+    public function delete($id){
+        University::find($id)->delete();
+        return redirect('/home');
     }
 }
 

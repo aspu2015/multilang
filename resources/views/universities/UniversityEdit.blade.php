@@ -15,8 +15,8 @@
                     @endif
 
                     
-                    <form action="/update" method="POST">
-                        <input type="text" style="display:none;" name="id" id="id" value="{{$university->id}}">
+                    <form action="/university/{{$university->id}}/update" method="PUT">
+                        @csrf
                         <div class="form-group">
                             <label for="universityName">Название университета</label>
                             <input type="text" class="form-control" id="universityName" name="universityName" aria-describedby="nameHelp" placeholder="Введите название " value="{{$university->name}}">

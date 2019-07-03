@@ -26,11 +26,11 @@ class UniversityCollection
                     "coordinates"=> $currentUniversity->getGeometryAsArray()
                 ],
                 "properties"=>[
-                    "balloonContentHeader"=>"<a href='/info?id=".$currentUniversity->id."'>".$currentUniversity->name." </a>",
-                    "balloonContentBody" => "",
-                    "balloonContentFooter" => "",
-                    "clusterCaption" => "",
-                    "hintContent" => ""
+                    "balloonContentHeader"=>"<a href='/university/info?id=".$currentUniversity->id."'>".$currentUniversity->name." </a>",
+                    "balloonContentBody" => "<a href='/university/info?id=".$currentUniversity->id."'>".$currentUniversity->description." </a>",
+                    "balloonContentFooter" => " ",
+                    "clusterCaption" => "<p>".$currentUniversity->name." </p>",
+                    "hintContent" => " 45"
                 ]
 
             ];

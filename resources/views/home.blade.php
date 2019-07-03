@@ -40,10 +40,12 @@
                                     {{count($item->translation)}}
                                 </td>
                                 <td>
-                                    <a href="/edit?id={{$item->id}}">редактировать</a>
+                                <a href="/university/{{$item->id}}/edit">редактировать</a>
                                 </td>
                                 <td>
-                                    <a href="/delete?id={{$item->id}}">удалить</a>
+                                    <form action="/university/{{$item->id}}/delete" method="DELETE">
+                                        <input type="submit" value = "удалить">
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach 
