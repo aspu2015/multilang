@@ -1,0 +1,8 @@
+.chooseLang{
+    width: 60%;
+    margin:auto;
+}
+.choose-lang-div{
+    display: inline-flex; 
+    width: 40%;
+}

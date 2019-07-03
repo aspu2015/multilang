@@ -7,9 +7,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    Choose your Language: 
-                    <select id="languageSelector" class="browser-default custom-select">
-                    </select>
+                    
                 </div>
 
                 <div id="textBody" class="card-body">

@@ -13,13 +13,8 @@ function findGetParameter(parameterName) {
 }
 
 function onOptionClick(langName){
-    console.log('qwe');
     for(var i =0; i < langs.length; i++){
         let obj = langs[i];
-        console.log(obj.langName);
-        console.log(langName);
-        console.log(langName == obj.langName);
-        console.log('-----');
         if(obj.langName == langName){
             $('#textBody').text(obj.text);
         }
@@ -34,10 +29,16 @@ $(document).ready(function(){
     }).done(function(data) {
         var translations = JSON.parse(data);
         langs = translations;
+        let firstValue = null;
         for(var i = 0; i < translations.length; i++){
+            
             let langName = translations[i].langName;
-            $('#languageSelector').append($('<option value="'+langName+'">'+langName+'</option>'));        
+            $('#languageSelector').append($('<option value="'+langName+'">'+langName+'</option>'));     
+            if(firstValue == null)
+                firstValue = langName;   
         }
+        onOptionClick(firstValue);
+
         $('#languageSelector').on('change', function() {
             onOptionClick(this.value);
         });

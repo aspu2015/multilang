@@ -21,6 +21,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/layoutCss/layout.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -29,6 +30,11 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
+                <div class="choose-lang-div">
+                    <p class="chooseLang" >Choose your Language: </p>
+                    <select id="languageSelector" class="browser-default custom-select">
+                    </select>
+                </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
