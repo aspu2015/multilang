@@ -13,6 +13,8 @@ class University extends Model
 
     public static function getAllUniversities(){
         return University::with('translation')->get();
+        // return University::join('translations','translations.university_id','=','universities.id')
+        // ->get();
     }
 
     public function translation(){

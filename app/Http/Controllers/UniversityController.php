@@ -29,6 +29,11 @@ class UniversityController extends Controller
         return view('UniversityInfo');
     }
 
+
+    /**
+    * show possble translations
+    * @return string
+    */
     public function getLangs(){
         $avalibleLangs = null;
         if(isset($_GET['id']))
@@ -38,6 +43,12 @@ class UniversityController extends Controller
         return json_encode($avalibleLangs);
     }
 
+
+    /**
+    * To show all Universities on map
+    *
+    * @return string
+    */
     public function getGeodata(){
         $all = new UniversityCollection();
         $all->fillFeatures(University::all());

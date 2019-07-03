@@ -25,7 +25,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $universities = University::getAllUniversities();
+        // return json_encode($universities);
+        // dd($universities);
+        return view('home',[
+            'universities' => $universities
+        ]);
     }
 
 }
