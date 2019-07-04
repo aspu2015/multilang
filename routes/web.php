@@ -25,16 +25,18 @@ Route::get('/api/langs','UniversityController@getLangs')->name('UniversityContro
 
 Route::get('/university/create','UniversityController@create')->name('UniversityController.create');
 Route::post('/university/store','UniversityController@store')->name('UniversityController.store');
-
 Route::get('/university/{id}/edit', 'UniversityController@edit')->middleware('auth')->name('UniversityControllerEdit');
 Route::post('/university/{id}/update', 'UniversityController@update')->middleware('auth')->name('UniversityController.update');
-
 Route::post('/university/{id}/destroy', 'UniversityController@destroy')->middleware('auth')->name('UniversityController.delete');
 
 Route::get('/university/{id}/translation/create', 'TranslationController@create')->middleware('auth')->name('TranslationController.create');
 Route::post('/university/{id}/translation/store', 'TranslationController@store')->middleware('auth')->name('TranslationController.store');
+Route::get('/translation/{id}/edit', 'TranslationController@edit')->name('TranslationController.edit');
+Route::post('/translation/{id}/update', 'TranslationController@update')->name('TranslationController.update');
+Route::post('/translation/{id}/destroy', 'TranslationController@destroy')->name('TranslationController.destroy');
 
-Route::get('/translation/{id}/edit', 'TranslationController@edit')->middleware('auth')->name('TranslationController.edit');
-Route::post('/translation/{id}/update', 'TranslationController@update')->middleware('auth')->name('TranslationController.update');
-
-Route::post('/translation/{id}/destroy', 'TranslationController@destroy')->middleware('auth')->name('TranslationController.destroy');
+Route::get('/lang/create', 'LanguageController@create')->name('LanguageController.create');
+Route::post('/lang/store', 'LanguageController@store')->name('LanguageController.store');
+Route::get('/lang/{id}/edit', 'LanguageController@edit')->name('LanguageController.edit');
+Route::post('/lang/{id}/update', 'LanguageController@update')->name('LanguageController.update');
+Route::post('/lang/{id}/destroy', 'LanguageController@destroy')->name('LanguageController.destroy');
