@@ -15,7 +15,7 @@
                     @endif
 
                     
-                    <form action="/university/{{$university_id}}/translation/store" method="POST">
+                    <form action="/translation/{{$translation->id}}/store" method="POST">
                         @csrf
                         <div class="form-group">
                             <label for="language">Название языка:</label>
@@ -27,13 +27,11 @@
                         </div>
                         <div class="form-group">
                                 <label for="universityName">Название университета:</label>
-                                <input type="text" class="form-control" id="universityName" name="universityName" aria-describedby="descriptionHelp" placeholder="Введите название университета " >
-                                
+                                <input type="text" class="form-control" id="universityName" name="universityName" aria-describedby="descriptionHelp" placeholder="Введите название университета " value={{$translation->name}}>
                         </div>
                         <div class="form-group">
                                 <label for="universityDescription">Описание Университета:</label>
-                                <input type="text" class="form-control" id="universityDescription" name="universityDescription" aria-describedby="latitudeHelp" placeholder="Введите описание " >
-                                
+                                <input type="text" class="form-control" id="universityDescription" name="universityDescription" aria-describedby="latitudeHelp" placeholder="Введите описание " value="{{$translation->text}}">
                         </div>  
                         <input type="submit" value="Создать">
                     </form>
