@@ -35,6 +35,7 @@ Route::get('/translation/{id}/edit', 'TranslationController@edit')->name('Transl
 Route::post('/translation/{id}/update', 'TranslationController@update')->name('TranslationController.update');
 Route::post('/translation/{id}/destroy', 'TranslationController@destroy')->name('TranslationController.destroy');
 
+Route::get('/lang','LanguageController@index')->name('LanguageController.index');
 Route::get('/lang/create', 'LanguageController@create')->name('LanguageController.create');
 Route::post('/lang/store', 'LanguageController@store')->name('LanguageController.store');
 Route::get('/lang/{id}/edit', 'LanguageController@edit')->name('LanguageController.edit');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Language;
+use App\Translation;
 
 class LanguageController extends Controller
 {
@@ -19,7 +20,7 @@ class LanguageController extends Controller
 
     public function index()
     {
-        
+        return view('language.LanguageIndex');
     }
 
     public function show($id){
@@ -27,7 +28,7 @@ class LanguageController extends Controller
     }
 
     public function create(){
-        return view('language.LanguageCreate')
+        return view('language.LanguageCreate');
     }
 
     public function store(Request $request)
@@ -39,6 +40,7 @@ class LanguageController extends Controller
     {
         
     }
+
     public function update(Request $request, $id)
     {
         
@@ -47,6 +49,7 @@ class LanguageController extends Controller
     public function destroy($request, $id)
     {
         $lang = Language::find($id);
+        Translation::where('language_id','=',$lang->id)->delete();
         $lang->delete();
     }
 
