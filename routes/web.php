@@ -33,3 +33,6 @@ Route::post('/university/{id}/destroy', 'UniversityController@delete')->middlewa
 
 Route::get('/university/{id}/translation/create', 'TranslationController@create')->middleware('auth')->name('TranslationController.create');
 Route::post('/university/{id}/translation/store', 'TranslationController@store')->middleware('auth')->name('TranslationController.store');
+
+Route::get('/transation/{id}/edit', 'TranslationController@edit')->middleware('auth')->name('TranslationController.edit');
+Route::post('/transation/{id}/update', 'TranslationController@update')->middleware('auth')->name('TranslationController.update');
