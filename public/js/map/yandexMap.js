@@ -6,7 +6,8 @@ $(document).ready(function(){
                 zoom: 10,
                 controls: ['geolocationControl']
             }, {
-                searchControlProvider: 'yandex#search'
+                searchControlProvider: 'yandex#search',
+                yandexMapDisablePoiInteractivity: true
             }),
             objectManager = new ymaps.ObjectManager({
                 // Чтобы метки начали кластеризоваться, выставляем опцию.
