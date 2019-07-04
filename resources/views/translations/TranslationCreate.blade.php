@@ -15,10 +15,15 @@
                     @endif
 
                     
-                    <form action="/university/store" method="POST">
+                    <form action="/translation/store" method="POST">
                         @csrf
                         <div class="form-group">
-                            <label for="universityName">Название университета</label>
+                            <label for="universityName">Название языка</label>
+                            <select>
+                                @foreach ($langs as $item)
+                                    <option></option>
+                                @endforeach
+                            </select>
                             <input type="text" class="form-control" id="universityName" name="universityName" aria-describedby="nameHelp" placeholder="Введите название " >
                             
                         </div>

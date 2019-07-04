@@ -90,7 +90,7 @@ class UniversityController extends Controller
         return redirect('/home');
     }
 
-    public function delete($id){
+    public function destroy(Request $request, $id){
         University::find($id)->delete();
         return redirect('/home');
     }

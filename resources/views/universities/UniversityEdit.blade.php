@@ -15,7 +15,7 @@
                     @endif
 
                     
-                    <form action="/university/{{$university->id}}/update" method="PUT">
+                    <form action="/university/{{$university->id}}/update" method="POST">
                         @csrf
                         <div class="form-group">
                             <label for="universityName">Название университета</label>

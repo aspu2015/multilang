@@ -16,7 +16,7 @@
 
                     <br>
 
-                    <button class="button" onclick="location.href = '/create';" >добавить университет</button>
+                    <button class="button" onclick="location.href = '/university/create';" >добавить университет</button>
                     <br><br>
                     <table class="table table-bordered">
                         <thead>
@@ -43,7 +43,8 @@
                                 <a href="/university/{{$item->id}}/edit">редактировать</a>
                                 </td>
                                 <td>
-                                    <form action="/university/{{$item->id}}/delete" method="DELETE">
+                                    <form action="/university/{{$item->id}}/delete" method="POST">
+                                        @csrf
                                         <input type="submit" value = "удалить">
                                     </form>
                                 </td>

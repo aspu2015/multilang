@@ -30,7 +30,7 @@ class UniversityCollection
                     "balloonContentBody" => "<a href='/university/info?id=".$currentUniversity->id."'>".$currentUniversity->description." </a>",
                     "balloonContentFooter" => " ",
                     "clusterCaption" => "<p>".$currentUniversity->name." </p>",
-                    "hintContent" => " 45"
+                    "hintContent" => $currentUniversity->name
                 ]
 
             ];

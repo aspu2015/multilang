@@ -27,6 +27,6 @@ Route::get('/university/create','UniversityController@create')->name('University
 Route::post('/university/store','UniversityController@store')->name('UniversityController.store');
 
 Route::get('/university/{id}/edit', 'UniversityController@edit')->middleware('auth')->name('UniversityControllerEdit');
-Route::put('/university/{id}/update', 'UniversityController@update')->middleware('auth')->name('UniversityController.update');
+Route::post('/university/{id}/update', 'UniversityController@update')->middleware('auth')->name('UniversityController.update');
 
-Route::delete('/university/{id}/delete', 'UniversityController@delete')->middleware('auth')->name('UniversityController.delete');
+Route::post('/university/{id}/destroy', 'UniversityController@delete')->middleware('auth')->name('UniversityController.delete');
