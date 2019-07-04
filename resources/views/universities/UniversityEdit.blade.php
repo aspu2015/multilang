@@ -40,6 +40,9 @@
                     </form>
                     <hr>
                     Доступные переводы:
+                    <br>
+                        <button class="button" onclick="location.href = '/university/{{$university->id}}/translation/create';" >добавить перевод</button>
+                    <br>
                     <table class="table table-bordered">
                         <thead>
                             <tr>
@@ -58,10 +61,10 @@
                                 {{$item->text}}
                             </td>
                             <td>
-                                <a href="/translation/edit?id={{$item->id}}">редактировать</a>
+                                <a href="/translation/{{$item->id}}/edit">редактировать</a>
                             </td>
                             <td>
-                                <a href="/translation/delete?id={{$item->id}}">редактировать</a>
+                                <a href="/translation/{{$item->id}}/delete">удалить</a>
                             </td>
                         </tr>
                         @endforeach
