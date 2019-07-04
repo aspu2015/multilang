@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Language;
+use App\Translation;
 
 class TranslationController extends Controller
 {
@@ -30,7 +31,14 @@ class TranslationController extends Controller
     public function create($id)
     {
         // dd(Language::all());
-        $availableLang = Language::join('translations', 'languages.id', '=','translations.language_id')->where('university_id','<>',$id)->get();
+        $translationLangs = Language::join('translations', 'languages.id', '=','translations.language_id')
+                                      ->where('university_id','=',$id)
+                                      ->select('languages.id')
+                                      ->get('id')
+                                      ->pluck('id');
+        $availableLang = Translation::whereNotIn('language_id', $translationLangs)->get();
+
+        dd($availableLang);
         return view('translations.TranslationCreate',[
             'langs' => $availableLang,
             'university_id' => $id
@@ -78,7 +86,13 @@ class TranslationController extends Controller
      */
     public function edit($id)
     {
-        //
+        $translation = Translation::find($id);
+        $langs = Language::langToEdit($id);
+        dd($langs);
+        return view('translations.TranslationEdit',[
+            'translation'=>$translation,
+            'langs'=>$langs
+        ]);
     }
 
     /**

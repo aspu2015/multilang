@@ -1,0 +1,45 @@
+@extends('layouts.adminLayout')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Университеты:</div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    
+                    <form action="/translation/{{$translation->id}}/store" method="POST">
+                        @csrf
+                        <div class="form-group">
+                            <label for="language">Название языка:</label>
+                            <select class="form-control" id="language" name="language_id">
+                                @foreach ($langs as $item)
+                                    <option value="{{$item->id}}">{{$item->langName}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                                <label for="universityName">Название университета:</label>
+                                <input type="text" class="form-control" id="universityName" name="universityName" aria-describedby="descriptionHelp" placeholder="Введите название университета " value={{$translation->name}}>
+                        </div>
+                        <div class="form-group">
+                                <label for="universityDescription">Описание Университета:</label>
+                                <input type="text" class="form-control" id="universityDescription" name="universityDescription" aria-describedby="latitudeHelp" placeholder="Введите описание " value="{{$translation->text}}">
+                        </div>  
+                        <input type="submit" value="Создать">
+                    </form>
+                    <hr>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
