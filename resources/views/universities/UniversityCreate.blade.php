@@ -27,6 +27,15 @@
                                 <input type="text" class="form-control" id="universityDescription" name="universityDescription" aria-describedby="descriptionHelp" placeholder="Введите описание " >
                                 
                         </div>
+
+
+                        <script src="https://api-maps.yandex.com/2.1/?apikey=1f0064eb-6c20-41d7-87b9-c25967a30cd1&lang=ru_RU" type="text/javascript">
+                        </script>
+
+                        <script src="{{ asset('js/map/yandexMapForCreate.js')}}"></script>
+                        <div id="map" style="width: 690px; height: 400px"></div>
+
+
                         <div class="form-group">
                                 <label for="universityLatitude">Широта (первое число координат)</label>
                                 <input type="text" class="form-control" id="universityLatitude" name="universityLatitude" aria-describedby="latitudeHelp" placeholder="Введите широту " >
