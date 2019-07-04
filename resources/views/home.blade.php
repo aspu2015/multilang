@@ -43,7 +43,7 @@
                                 <a href="/university/{{$item->id}}/edit">редактировать</a>
                                 </td>
                                 <td>
-                                    <form action="/university/{{$item->id}}/delete" method="POST">
+                                    <form action="/university/{{$item->id}}/destroy" method="POST">
                                         @csrf
                                         <input type="submit" value = "удалить">
                                     </form>
