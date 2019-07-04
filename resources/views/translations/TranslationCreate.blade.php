@@ -15,32 +15,26 @@
                     @endif
 
                     
-                    <form action="/translation/store" method="POST">
+                    <form action="university/{{$university_id}}/translation/store" method="POST">
                         @csrf
                         <div class="form-group">
-                            <label for="universityName">Название языка</label>
-                            <select>
+                            <label for="language">Название языка:</label>
+                            <select class="form-control" id="language">
                                 @foreach ($langs as $item)
-                                    <option></option>
+                                    <option value="{{$item->id}}">{{$item->langName}}</option>
                                 @endforeach
                             </select>
-                            <input type="text" class="form-control" id="universityName" name="universityName" aria-describedby="nameHelp" placeholder="Введите название " >
-                            
                         </div>
                         <div class="form-group">
-                                <label for="universityDescription">Краткое описание университета</label>
-                                <input type="text" class="form-control" id="universityDescription" name="universityDescription" aria-describedby="descriptionHelp" placeholder="Введите описание " >
+                                <label for="universityName">Название университета:</label>
+                                <input type="text" class="form-control" id="universityName" name="universityName" aria-describedby="descriptionHelp" placeholder="Введите название университета " >
                                 
                         </div>
                         <div class="form-group">
-                                <label for="universityLatitude">Широта (первое число координат)</label>
-                                <input type="text" class="form-control" id="universityLatitude" name="universityLatitude" aria-describedby="latitudeHelp" placeholder="Введите широту " >
+                                <label for="universityDescription">Описание Университета:</label>
+                                <input type="text" class="form-control" id="universityDescription" name="universityDescription" aria-describedby="latitudeHelp" placeholder="Введите описание " >
                                 
-                        </div>
-                        <div class="form-group">
-                                <label for="universityLongitude">Долгота (второе число координат)</label>
-                                <input type="text" class="form-control" id="universityLongitude" name="universityLongitude" aria-describedby="longitudeHelp" placeholder="Введите долготу " >
-                        </div>
+                        </div>  
                         <input type="submit" value="Создать">
                     </form>
                     <hr>

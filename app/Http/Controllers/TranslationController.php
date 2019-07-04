@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Language;
 
 class TranslationController extends Controller
 {
@@ -15,7 +16,7 @@ class TranslationController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function index()
     {
         //
@@ -26,9 +27,14 @@ class TranslationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        // dd(Language::all());
+        $availableLang = Language::join('translations', 'languages.id', '=','translations.language_id')->where('university_id','<>',$id)->get();
+        return view('translations.TranslationCreate',[
+            'langs' => $availableLang,
+            'university_id' => $id
+        ]);
     }
 
     /**
@@ -39,7 +45,7 @@ class TranslationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
     }
 
     /**
