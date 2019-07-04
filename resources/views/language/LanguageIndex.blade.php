@@ -27,7 +27,7 @@
                         @foreach ($langs as $item)
                             <tr>
                                 <td>
-                                    {{$item->name}}
+                                    {{$item->langName}}
                                 </td>
                                 <td>
                                 <a href="/lang/{{$item->id}}/edit">редактировать</a>

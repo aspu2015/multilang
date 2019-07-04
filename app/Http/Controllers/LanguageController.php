@@ -20,7 +20,9 @@ class LanguageController extends Controller
 
     public function index()
     {
-        return view('language.LanguageIndex');
+        return view('language.LanguageIndex',[
+            'langs' => Language::all()
+        ]);
     }
 
     public function show($id){
