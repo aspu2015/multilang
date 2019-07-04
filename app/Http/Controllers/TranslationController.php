@@ -30,15 +30,9 @@ class TranslationController extends Controller
      */
     public function create($id)
     {
-        // dd(Language::all());
-        $translationLangs = Language::join('translations', 'languages.id', '=','translations.language_id')
-                                      ->where('university_id','=',$id)
-                                      ->select('languages.id')
-                                      ->get('id')
-                                      ->pluck('id');
-        $availableLang = Translation::whereNotIn('language_id', $translationLangs)->get();
+        $availableLang = Language::getAvalibleLangs($id);
 
-        dd($availableLang);
+        // dd($availableLang);
         return view('translations.TranslationCreate',[
             'langs' => $availableLang,
             'university_id' => $id
@@ -53,15 +47,13 @@ class TranslationController extends Controller
      */
     public function store(Request $request, $id)
     {
-        // dd($request);
-        // dd( $request->get('name'););
+
         $translation = new \App\Translation;
         $translation->university_id = $id;
         $translation->language_id = $request->get('language_id');
         $translation->name = $request->get('universityName');
         $translation->text = $request->get('universityDescription');
 
-        // dd($translation);
         $translation->save();
 
         return redirect('/home');
@@ -87,11 +79,12 @@ class TranslationController extends Controller
     public function edit($id)
     {
         $translation = Translation::find($id);
-        $langs = Language::langToEdit($id);
-        dd($langs);
+        $avalibleLangs = Language::getAvalibleLangs($translation->university_id);
+        $selectedLanguage = Language::find($translation->language_id);
         return view('translations.TranslationEdit',[
             'translation'=>$translation,
-            'langs'=>$langs
+            'avalibleLangs'=>$avalibleLangs,
+            'selectedLang' => $selectedLanguage
         ]);
     }
 
@@ -104,7 +97,14 @@ class TranslationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $translation = Translation::find($id);
+        $translation->language_id = $request->get('language_id');
+        $translation->name = $request->get('universityName');
+        $translation->text = $request->get('universityDescription');
+
+        $translation->save();
+
+        return redirect('/home');
     }
 
     /**
