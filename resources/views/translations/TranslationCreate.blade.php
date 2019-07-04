@@ -15,11 +15,11 @@
                     @endif
 
                     
-                    <form action="university/{{$university_id}}/translation/store" method="POST">
+                    <form action="/university/{{$university_id}}/translation/store" method="POST">
                         @csrf
                         <div class="form-group">
                             <label for="language">Название языка:</label>
-                            <select class="form-control" id="language">
+                            <select class="form-control" id="language" name="language_id">
                                 @foreach ($langs as $item)
                                     <option value="{{$item->id}}">{{$item->langName}}</option>
                                 @endforeach

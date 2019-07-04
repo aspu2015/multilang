@@ -43,9 +43,20 @@ class TranslationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        dd($request);
+        // dd($request);
+        // dd( $request->get('name'););
+        $translation = new \App\Translation;
+        $translation->university_id = $id;
+        $translation->language_id = $request->get('language_id');
+        $translation->name = $request->get('universityName');
+        $translation->text = $request->get('universityDescription');
+
+        // dd($translation);
+        $translation->save();
+
+        return redirect('/home');
     }
 
     /**
