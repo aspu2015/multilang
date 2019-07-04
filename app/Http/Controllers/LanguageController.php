@@ -35,6 +35,8 @@ class LanguageController extends Controller
 
     public function store(Request $request)
     {
+        $lang = new App/Language;
+        
         dd($request);
     }
 
@@ -48,11 +50,12 @@ class LanguageController extends Controller
         
     }
 
-    public function destroy($request, $id)
+    public function destroy(Request $request, $id)
     {
         $lang = Language::find($id);
         Translation::where('language_id','=',$lang->id)->delete();
         $lang->delete();
+        return redirect('/lang');
     }
 
 }

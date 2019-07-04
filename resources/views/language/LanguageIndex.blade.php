@@ -14,8 +14,9 @@
                         </div>
                     @endif
                     
-
-
+                    
+                    <button class="button" onclick="location.href = '/lang/create';" >добавить язык</button>
+                    <br>
                     <table class="table table-bordered">
                         <thead>
                             <tr>

@@ -16,17 +16,10 @@
                     
                     <form action="/lang/store" method="POST">
                         @csrf
-                        <div class="form-group">
-                            <label for="language">Название языка:</label>
-                            <select class="form-control" id="language" name="language_id">
-                                @foreach ($langs as $item)
-                                    <option value="{{$item->id}}">{{$item->langName}}</option>
-                                @endforeach
-                            </select>
-                        </div>
+                        
                         <div class="form-group">
                                 <label for="langName">Отображаемое название языка:</label>
-                                <input type="text" class="form-control" id="langName" name="langName" aria-describedby="descriptionHelp" placeholder="Введите название университета " >
+                                <input type="text" class="form-control" id="langName" name="langName" aria-describedby="descriptionHelp" placeholder="Введите название языка " >
                                 
                         </div>
                         <input type="submit" value="Создать">
