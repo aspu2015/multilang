@@ -36,3 +36,5 @@ Route::post('/university/{id}/translation/store', 'TranslationController@store')
 
 Route::get('/translation/{id}/edit', 'TranslationController@edit')->middleware('auth')->name('TranslationController.edit');
 Route::post('/translation/{id}/update', 'TranslationController@update')->middleware('auth')->name('TranslationController.update');
+
+Route::post('/translation/{id}/destroy', 'TranslationController@destroy')->middleware('auth')->name('TranslationController.destroy');
