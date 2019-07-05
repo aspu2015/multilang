@@ -20,7 +20,7 @@
                             <label for="langName">Отображаемое название языка:</label>
                             <input type="text" class="form-control" id="langName" name="langName" aria-describedby="descriptionHelp" placeholder="Введите название языка " value="{{$lang->langName}}" >    
                         </div>
-                        <input type="submit" value="Создать">
+                        <input type="submit" value="Обновить">
                     </form>
                     <hr>
                     
