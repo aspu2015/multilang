@@ -56,7 +56,7 @@ class TranslationController extends Controller
 
         $translation->save();
 
-        return redirect('/home');
+        return redirect("/university/$id/edit");
     }
 
     /**
@@ -104,7 +104,7 @@ class TranslationController extends Controller
 
         $translation->save();
 
-        return redirect('/home');
+        return redirect("/university/$translation->university_id/edit");
     }
 
     /**
@@ -115,7 +115,8 @@ class TranslationController extends Controller
      */
     public function destroy(Request $request, $id)
     {
-        University::find($id)->delete();
-        return redirect('/home');
+        $translation = Translation::find($id);
+        $translation->delete();
+        return redirect("/university/$translation->university_id/edit");
     }
 }

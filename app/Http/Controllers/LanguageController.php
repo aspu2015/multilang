@@ -35,9 +35,13 @@ class LanguageController extends Controller
 
     public function store(Request $request)
     {
-        $lang = new App/Language;
-        
-        dd($request);
+        $lang = new Language;
+        $lang->langName = $request->get('langName');
+        $lang->picturePath = " ";
+
+        $lang->save();
+        // dd($request);
+        return redirect('/lang');
     }
 
     public function edit($id)
