@@ -46,12 +46,17 @@ class LanguageController extends Controller
 
     public function edit($id)
     {
-        
+        $lang = Language::find($id);
+        return view('language.LanguageEdit',[
+            'lang' => $lang
+        ]);
     }
 
     public function update(Request $request, $id)
     {
-        
+        $lang = Language::find($id);
+        $lang->langName = $request->get("langName");
+        return redirect('/lang');
     }
 
     public function destroy(Request $request, $id)
