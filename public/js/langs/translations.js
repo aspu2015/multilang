@@ -33,14 +33,24 @@ $(document).ready(function(){
         for(var i = 0; i < translations.length; i++){
             
             let langName = translations[i].langName;
-            $('#languageSelector').append($('<option value="'+langName+'">'+langName+'</option>'));     
+            let picturePath = translations[i].picturePath;
+            $('#webmenu').append($('<option value="'+langName+'" data-image="'+picturePath+'">'+langName+'</option>'));     
             if(firstValue == null)
-                firstValue = langName;   
+                firstValue = langName;
         }
         onOptionClick(firstValue);
 
-        $('#languageSelector').on('change', function() {
+        $('#webmenu').on('change', function() {
             onOptionClick(this.value);
         });
+
+        try {
+            $("body select").msDropDown();
+        } catch(e) {
+            alert(e.message);
+        }
     });
+
+    
+    
 });

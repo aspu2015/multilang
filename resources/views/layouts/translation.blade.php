@@ -10,12 +10,25 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/libs/jquery.js')}}"></script>
-    <script src="{{ asset('js/libs/bootstrap.js')}}"></script>
-    <script src="{{ asset('js/libs/summernote.js')}}"></script>
+
+    <script src="{{ asset('js/app.js') }}" ></script>
+    <script src="{{ asset('js/libs/jquery-1.9.0.min.js') }}"></script>
+    <!-- <script src="{{ asset('js/libs/jquery.js')}}"></script> -->
+    <!-- <script src="{{ asset('js/libs/bootstrap.js')}}"></script> -->
+    <!-- <script src="{{ asset('js/libs/summernote.js')}}"></script> -->
 
     <!-- Fonts -->
+    
+    <!-- <msdropdown> -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/dd.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/skin2.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/flags.css') }}" />
+    <script src="{{ asset('js/langs/jquery.dd.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/langs/jquery.dd.min.js') }}" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/dd.css') }}"/>
+    <!-- </msdropdown> -->
+
+
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
@@ -32,7 +45,9 @@
                 </a>
                 <div class="choose-lang-div">
                     <p class="chooseLang" >Choose your Language: </p>
-                    <select id="languageSelector" class="browser-default custom-select">
+                    <!-- class="browser-default custom-select" -->
+                    <select id="webmenu"  name = "webmenu">
+                    
                     </select>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -82,6 +97,7 @@
         </nav>
 
         <main class="py-4">
+            
             @yield('content')
         </main>
     </div>
