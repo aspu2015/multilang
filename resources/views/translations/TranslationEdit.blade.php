@@ -15,12 +15,13 @@
                     @endif
 
                     
-                    <form action="/translation/{{$translation->id}}/store" method="POST">
+                    <form action="/translation/{{$translation->id}}/update" method="POST">
                         @csrf
                         <div class="form-group">
                             <label for="language">Название языка:</label>
                             <select class="form-control" id="language" name="language_id">
-                                @foreach ($langs as $item)
+                                <option selected value="{{$selectedLang->id}}">{{$selectedLang->langName}}</option>
+                                @foreach ($avalibleLangs as $item)
                                     <option value="{{$item->id}}">{{$item->langName}}</option>
                                 @endforeach
                             </select>
@@ -33,7 +34,7 @@
                                 <label for="universityDescription">Описание Университета:</label>
                                 <input type="text" class="form-control" id="universityDescription" name="universityDescription" aria-describedby="latitudeHelp" placeholder="Введите описание " value="{{$translation->text}}">
                         </div>  
-                        <input type="submit" value="Создать">
+                        <input type="submit" value="Обновить">
                     </form>
                     <hr>
                     

@@ -73,7 +73,10 @@
                                 <a href="/translation/{{$item->id}}/edit">редактировать</a>
                             </td>
                             <td>
-                                <a href="/translation/{{$item->id}}/delete">удалить</a>
+                                <form action="/translation/{{$item->id}}/destroy" method="POST">
+                                    @csrf
+                                    <input type="submit" value = "удалить">
+                                </form>
                             </td>
                         </tr>
                         @endforeach
