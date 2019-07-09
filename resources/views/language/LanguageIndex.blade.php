@@ -21,6 +21,7 @@
                         <thead>
                             <tr>
                                 <th scope="col">Название</th>
+                                <th scope="col">Картинка</th>
                                 <th scope="col">Редактировать</th>
                                 <th scope="col">Удалить</th>
                             </tr>
@@ -29,6 +30,9 @@
                             <tr>
                                 <td>
                                     {{$item->langName}}
+                                </td>
+                                <td>
+                                    <img src="{{$item->picturePath}}" >
                                 </td>
                                 <td>
                                 <a href="/lang/{{$item->id}}/edit">редактировать</a>

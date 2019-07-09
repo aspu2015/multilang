@@ -14,13 +14,18 @@
                         </div>
                     @endif
                     
-                    <form action="/lang/store" method="POST">
+                    <form action="/lang/store" method="POST" enctype="multipart/form-data">
                         @csrf
                         
                         <div class="form-group">
                                 <label for="langName">Отображаемое название языка:</label>
                                 <input type="text" class="form-control" id="langName" name="langName" aria-describedby="descriptionHelp" placeholder="Введите название языка " >
                                 
+                        </div>
+                        <div class="form-group">
+                            <label for="langName">Файл для картинки:</label>
+                            <input type="file" class="form-control" id="file" name="file" aria-describedby="descriptionHelp" placeholder="Выберите файл " >
+                            
                         </div>
                         <input type="submit" value="Создать">
                     </form>

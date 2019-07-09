@@ -37,10 +37,15 @@ class LanguageController extends Controller
     {
         $lang = new Language;
         $lang->langName = $request->get('langName');
-        $lang->picturePath = " ";
 
+        $image = $request['file']; 
+        $input['name'] = time() . '.' . $image->getClientOriginalExtension();
+        $destinationPath = public_path('/images');
+        $image->move($destinationPath, $input['name']);
+        
+        $lang->picturePath ="/images/".$input['name'];
         $lang->save();
-        // dd($request);
+
         return redirect('/lang');
     }
 

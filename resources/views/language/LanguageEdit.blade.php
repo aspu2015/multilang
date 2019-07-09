@@ -14,11 +14,15 @@
                         </div>
                     @endif
                     
-                    <form action="/lang/update" method="POST">
+                    <form action="/lang/{{$lang->id}}/update" method="POST">
                         @csrf
                         <div class="form-group">
                             <label for="langName">Отображаемое название языка:</label>
                             <input type="text" class="form-control" id="langName" name="langName" aria-describedby="descriptionHelp" placeholder="Введите название языка " value="{{$lang->langName}}" >    
+                        </div>
+                        <div class="form-group">
+                            <label for="langName">Файл для картинки:</label>
+                            <input type="file" class="form-control" id="file" name="file" aria-describedby="descriptionHelp" placeholder="Выберите файл " >
                         </div>
                         <input type="submit" value="Обновить">
                     </form>

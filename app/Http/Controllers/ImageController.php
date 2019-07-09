@@ -38,10 +38,12 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        $image = $request['file'];
+        $image = $request['file']; 
         $input['name'] = time() . '.' . $image->getClientOriginalExtension();
         $destinationPath = public_path('/images');
         $image->move($destinationPath, $input['name']);
+
+        Image::create(['title' => $request->title, 'img' => $input['name'] ]);
     }
 
     /**

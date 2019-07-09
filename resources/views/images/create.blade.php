@@ -15,6 +15,8 @@
     <div class="container">
         <form action="/images/create" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}          
+                название:
+                <input type="text" name="title">
                 <input id="file" type="file" name="file">
                 <input type="submit" class="btn btn-default">Добавить</button>
         </form>
