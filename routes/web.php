@@ -41,3 +41,8 @@ Route::post('/lang/store', 'LanguageController@store')->name('LanguageController
 Route::get('/lang/{id}/edit', 'LanguageController@edit')->name('LanguageController.edit');
 Route::post('/lang/{id}/update', 'LanguageController@update')->name('LanguageController.update');
 Route::post('/lang/{id}/destroy', 'LanguageController@destroy')->name('LanguageController.destroy');
+
+// Route::resource('/images','ImageController');
+Route::get('/images', 'ImageController@index');
+Route::get('/images/create', 'ImageController@create');
+Route::post('/images/create', 'ImageController@store');
