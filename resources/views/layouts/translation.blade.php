@@ -12,8 +12,8 @@
     <!-- Scripts -->
 
     <script src="{{ asset('js/app.js') }}" ></script>
-    <script src="{{ asset('js/libs/jquery-1.9.0.min.js') }}"></script>
-    <!-- <script src="{{ asset('js/libs/jquery.js')}}"></script> -->
+    <!-- <script src="{{ asset('js/libs/jquery-1.9.0.min.js') }}"></script> -->
+    <script src="{{ asset('js/libs/jquery.js')}}"></script>
     <!-- <script src="{{ asset('js/libs/bootstrap.js')}}"></script> -->
     <!-- <script src="{{ asset('js/libs/summernote.js')}}"></script> -->
 
@@ -41,7 +41,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Главная
+                    {{ config('app.name', 'Laravel') }}
                 </a>
                 <div class="choose-lang-div">
                     <p class="chooseLang" >Choose your Language: </p>
