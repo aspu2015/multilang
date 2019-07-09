@@ -47,7 +47,7 @@ class TranslationController extends Controller
      */
     public function store(Request $request, $id)
     {
-
+        // dd($request);
         $translation = new \App\Translation;
         $translation->university_id = $id;
         $translation->language_id = $request->get('language_id');

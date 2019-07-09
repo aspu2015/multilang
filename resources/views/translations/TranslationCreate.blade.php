@@ -33,6 +33,7 @@
                         <div class="form-group">
                                 <label for="universityDescription">Описание Университета:</label>
                                 <input type="text" class="form-control" id="universityDescription" name="universityDescription" aria-describedby="latitudeHelp" placeholder="Введите описание " >
+                                {{-- <textarea name="universityDescription" id="universityDescription" ></textarea> --}}
                                 
                         </div>  
                         <input type="submit" value="Создать">

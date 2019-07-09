@@ -19,8 +19,8 @@ class CreateTranslationsTable extends Migration
             //$table->foreign('university_id')->references('id')->on('universities');
             $table->integer('language_id');
             //$table->foreign('language_id')->references('id')->on('languages');
-            $table->string('name');
-            $table->string('text');
+            $table->longText('name');
+            $table->longText('text');
             $table->timestamps();
         });
     }
