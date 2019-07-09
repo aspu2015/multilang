@@ -13,7 +13,8 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/libs/jquery.js')}}"></script>
     <script src="{{ asset('js/libs/bootstrap.js')}}"></script>
-    <script src="{{ asset('js/libs/summernote.js')}}"></script>
+    <script src="{{ asset('js/libs/summernote.js')}}" defer></script>
+    
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -21,6 +22,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/summernote.css') }}" rel="stylesheet">
     <link href="{{ asset('css/layoutCss/layout.css') }}" rel="stylesheet">
 </head>
 <body>

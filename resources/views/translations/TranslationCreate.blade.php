@@ -44,4 +44,6 @@
         </div>
     </div>
 </div>
+<script src="{{asset('/js/summernote/init.js')}}" defer></script>
+
 @endsection

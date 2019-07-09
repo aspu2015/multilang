@@ -41,6 +41,7 @@ class ImageController extends Controller
     {
         $name = ImageService::saveImage($request, 'file');
         Image::create(['title' => $request->title, 'img' => $name ]);
+        echo $name;
     }
 
     /**
