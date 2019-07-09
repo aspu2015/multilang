@@ -14,7 +14,7 @@
                         </div>
                     @endif
                     
-                    <form action="/lang/{{$lang->id}}/update" method="POST">
+                    <form action="/lang/{{$lang->id}}/update" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="langName">Отображаемое название языка:</label>

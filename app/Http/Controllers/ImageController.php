@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image as ImageInt;
 use \App\Image;
 use Illuminate\Support\Facades\Input;
+use App\ImageService;
 
 class ImageController extends Controller
 {
@@ -38,12 +39,8 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        $image = $request['file']; 
-        $input['name'] = time() . '.' . $image->getClientOriginalExtension();
-        $destinationPath = public_path('/images');
-        $image->move($destinationPath, $input['name']);
-
-        Image::create(['title' => $request->title, 'img' => $input['name'] ]);
+        $name = ImageService::saveImage($request, 'file');
+        Image::create(['title' => $request->title, 'img' => $name ]);
     }
 
     /**

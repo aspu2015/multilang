@@ -32,7 +32,7 @@
                                     {{$item->langName}}
                                 </td>
                                 <td>
-                                    <img src="{{$item->picturePath}}" >
+                                    <img class="lang-picture" src="{{$item->picturePath}}" >
                                 </td>
                                 <td>
                                 <a href="/lang/{{$item->id}}/edit">редактировать</a>

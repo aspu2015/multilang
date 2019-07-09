@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Language;
 use App\Translation;
+use App\ImageService;
 
 class LanguageController extends Controller
 {
@@ -37,13 +38,10 @@ class LanguageController extends Controller
     {
         $lang = new Language;
         $lang->langName = $request->get('langName');
-
-        $image = $request['file']; 
-        $input['name'] = time() . '.' . $image->getClientOriginalExtension();
-        $destinationPath = public_path('/images');
-        $image->move($destinationPath, $input['name']);
         
-        $lang->picturePath ="/images/".$input['name'];
+        $filePath = ImageService::saveImage($request,'file');
+        
+        $lang->picturePath =$filePath;
         $lang->save();
 
         return redirect('/lang');
@@ -60,7 +58,12 @@ class LanguageController extends Controller
     public function update(Request $request, $id)
     {
         $lang = Language::find($id);
+        if($request->hasFile('file')){
+            $name = ImageService::saveImage($request, 'file');
+            $lang->picturePath = $name;
+        }
         $lang->langName = $request->get("langName");
+        $lang->save();
         return redirect('/lang');
     }
 
