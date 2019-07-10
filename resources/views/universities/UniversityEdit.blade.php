@@ -55,7 +55,6 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th scope="col">Язык</th>
                                 <th scope="col">Название</th>
                                 <th scope="col">Краткое описание</th>
                                 <th scope="col">Редактировать</th>
@@ -64,9 +63,6 @@
                         </thead>
                         @foreach ($university->translation as $item)
                         <tr>
-                            <td>
-                                {{$lang->langName}}
-                            </td>
                             <td>
                                 {{$item->name}}
                             </td>
