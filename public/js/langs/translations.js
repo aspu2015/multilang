@@ -17,6 +17,7 @@ function onOptionClick(langName){
         let obj = langs[i];
         if(obj.langName == langName){
             // $('#textBody').text(obj.text);
+            $('#textBody').text("");
             ($('#textBody')[0]).insertAdjacentHTML('beforeend',obj.text);
         }
     }
