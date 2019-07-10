@@ -48,7 +48,7 @@ $(document).ready(function(){
                     data.features[i].properties, 
                     {clusterDisableClickZoom: true,
                         iconLayout: 'default#image',
-                        iconImageHref: 'images/flag.png'});
+                        iconImageHref: 'staticImages/flag.png'});
             }
             clusterer.add(geodata);
             myMap.geoObjects.add(clusterer);
