@@ -11,7 +11,7 @@ $(document).ready(function(){
             }),
 
             clusterer = new ymaps.Clusterer({
-                preset: 'islands#greenClusterIcons',
+                preset: 'islands#redClusterIcons',
                 groupByCoordinates: false,
                 clusterDisableClickZoom: true,
                 clusterHideIconOnBalloonOpen: false,
@@ -28,17 +28,6 @@ $(document).ready(function(){
             //     iconImageSize: [140, 45],
             //     iconImageOffset: [-3, -42]
             // });
-
-
-
-            ////////// собственная метка ////////////
-            // objectManager.objects.options.set( {
-            //     iconLayout: 'default#image',
-            //     iconImageHref: 'images/Ukr.png',
-            //     iconImageSize: [40, 45],
-            //     iconImageOffset: [-3, -42]
-            // });
-            ////////// собственная метка ////////////
          
             
         // Чтобы задать опции одиночным объектам и кластерам,
@@ -57,8 +46,7 @@ $(document).ready(function(){
             for(var i = 0; i < data.features.length; i++){
                 geodata[i] = new ymaps.Placemark(data.features[i].geometry.coordinates, 
                     data.features[i].properties, 
-                    {preset: 'islands#greenDotIcon', 
-                        clusterDisableClickZoom: true,
+                    {clusterDisableClickZoom: true,
                         iconLayout: 'default#image',
                         iconImageHref: 'images/flag.png'});
             }
