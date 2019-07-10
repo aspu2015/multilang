@@ -1,4 +1,7 @@
 $(document).ready(function(){
+    var postForm = function() {
+        var content = $('textarea[name="universityDescription"]').html($('#summernote').code());
+    }
     $('#universityDescription').summernote({
         callbacks: {
             onImageUpload: function(files) {

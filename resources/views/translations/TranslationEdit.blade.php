@@ -15,7 +15,7 @@
                     @endif
 
                     
-                    <form action="/translation/{{$translation->id}}/update" method="POST">
+                    <form action="/translation/{{$translation->id}}/update" method="POST" onsubmit="return postForm()">
                         @csrf
                         <div class="form-group">
                             <label for="language">Название языка:</label>
@@ -32,7 +32,7 @@
                         </div>
                         <div class="form-group">
                                 <label for="universityDescription">Описание Университета:</label>
-                                <input type="text" class="form-control" id="universityDescription" name="universityDescription" aria-describedby="latitudeHelp" placeholder="Введите описание " value="{{$translation->text}}">
+                                <textarea name="universityDescription" id="universityDescription" >{{$translation->text}}</textarea>
                         </div>  
                         <input type="submit" value="Обновить">
                     </form>
@@ -43,4 +43,5 @@
         </div>
     </div>
 </div>
+<script src="{{asset('/js/summernote/init.js')}}" defer></script>
 @endsection

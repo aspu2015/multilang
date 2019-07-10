@@ -58,8 +58,11 @@ class UniversityController extends Controller
 
     public function edit($id){
         $currentUniversity = University::with('translation')->find($id);
+        // dd($currentUniversity->translation[0]->language_id);
+        $lang = Language::find($currentUniversity->translation[0]->language_id);
         return View('universities.UniversityEdit',[
-            'university' => $currentUniversity
+            'university' => $currentUniversity,
+            'lang' => $lang
         ]);
     }
 
