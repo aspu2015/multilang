@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder
         DB::table('universities')->insert([
             'name' => 'ASU',
             'description' => 'ASU - Astrakhan State University',
+            'country_id'=>'1',
+            'organization_id'=>'1',
             'geolocationX'=>55.831903,
             'geolocationY'=>37.411961
         ]);
@@ -40,6 +42,18 @@ class DatabaseSeeder extends Seeder
             'language_id'=>2,
             'name'=>'АГУ',
             'text'=>'АГУ- один из лучших университетов в Астрахани'
+        ]);
+        DB::table('organizations')->insert([
+            'name'=>'Бюджетная',
+        ]);
+        DB::table('organizations')->insert([
+            'name'=>'Коммерческая',
+        ]);
+        DB::table('countries')->insert([
+            'name'=>'Россия',
+        ]);
+        DB::table('countries')->insert([
+            'name'=>'Франция',
         ]);
     }
 }
