@@ -46,3 +46,8 @@ Route::post('/lang/{id}/destroy', 'LanguageController@destroy')->name('LanguageC
 Route::get('/images', 'ImageController@index');
 Route::get('/images/create', 'ImageController@create');
 Route::post('/images/create', 'ImageController@store');
+
+
+
+Route::get('/country', 'CountryController@index');
+Route::get('/organization', 'OrganizationController@index');
