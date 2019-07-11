@@ -46,7 +46,6 @@
                             </tr>
                         @endforeach 
                     </table>
-                    <hr>
                     
                 </div>
             </div>

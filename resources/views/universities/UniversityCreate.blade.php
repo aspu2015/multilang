@@ -47,7 +47,6 @@
                         </div>
                         <input type="submit" value="Создать">
                     </form>
-                    <hr>
                     
                 </div>
             </div>

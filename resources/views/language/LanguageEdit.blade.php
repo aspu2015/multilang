@@ -26,7 +26,6 @@
                         </div>
                         <input type="submit" value="Обновить">
                     </form>
-                    <hr>
                     
                 </div>
             </div>
