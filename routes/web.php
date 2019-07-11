@@ -50,7 +50,9 @@ Route::post('/images/create', 'ImageController@store');
 
 
 Route::get('/country', 'CountryController@index');
+Route::get('/country/create','CountryController@create');
+Route::post('/country/store','CountryController@store');
 Route::get('/country/{id}/edit','CountryController@edit');
-Route::get('/country/{id}/update','CountryController@update');
-Route::get('/country/{id}/destroy','CountryController@destroy');
+Route::post('/country/{id}/update','CountryController@update');
+Route::post('/country/{id}/destroy','CountryController@destroy');
 Route::get('/organization', 'OrganizationController@index');

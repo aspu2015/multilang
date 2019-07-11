@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Country extends Model
 {
-    //
+    public $timestamps = false;
+    
+    public function university(){
+        return $this->belongsTo('\App\University');
+    }
 }

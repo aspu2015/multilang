@@ -14,15 +14,11 @@
                         </div>
                     @endif
                     
-                    <form action="/country/{{$lang->id}}/update" method="POST" enctype="multipart/form-data">
+                    <form action="/country/{{$country->id}}/update" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label for="langName">Отображаемое название языка:</label>
-                            <input type="text" class="form-control" id="langName" name="langName" aria-describedby="descriptionHelp" placeholder="Введите название языка " value="{{$lang->langName}}" >    
-                        </div>
-                        <div class="form-group">
-                            <label for="langName">Файл для картинки:</label>
-                            <input type="file" class="form-control" id="file" name="file" aria-describedby="descriptionHelp" placeholder="Выберите файл " >
+                            <label for="langName">Отображаемое название страны:</label>
+                            <input type="text" class="form-control" id="name" name="name" aria-describedby="descriptionHelp" placeholder="Введите название страны " value="{{$country->name}}" >    
                         </div>
                         <input type="submit" value="Обновить">
                     </form>
