@@ -15,7 +15,7 @@
                     @endif
                     
                     
-                    <button class="button" onclick="location.href = '/lang/create';" >добавить язык</button>
+                    <button class="button" onclick="location.href = '/lang/create';" >добавить страну</button>
                     <br>
                     <table class="table table-bordered">
                         <thead>
