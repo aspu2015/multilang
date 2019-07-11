@@ -22,6 +22,23 @@
                             <input type="text" class="form-control" id="universityName" name="universityName" aria-describedby="nameHelp" placeholder="Введите название " >
                             
                         </div>
+
+                        <div class="form-group">
+                            <select name="organization_id" class="form-control">
+                            @foreach ($organizations as $item)   
+                                <option value="{{$item->id}}"> {{$item->name}}</option>
+                            @endforeach
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <select name="country_id" class="form-control">
+                            @foreach ($country as $item)   
+                                <option value="{{$item->id}}"> {{$item->name}}</option>
+                            @endforeach
+                            </select>
+                        </div>
+
                         <div class="form-group">
                                 <label for="universityDescription">Краткое описание университета</label>
                                 <input type="text" class="form-control" id="universityDescription" name="universityDescription" aria-describedby="descriptionHelp" placeholder="Введите описание " >
