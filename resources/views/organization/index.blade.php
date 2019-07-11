@@ -25,7 +25,7 @@
                                 <th scope="col">Удалить</th>
                             </tr>
                         </thead>
-                        @foreach ($countries as $item)
+                        @foreach ($organizations as $item)
                             <tr>
                                 <td>
                                     {{$item->name}}

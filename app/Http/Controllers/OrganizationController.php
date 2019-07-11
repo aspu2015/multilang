@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Organization;
 
-class OrganisationController extends Controller
+class OrganizationController extends Controller
 {
 
     public function index()
@@ -22,8 +22,8 @@ class OrganisationController extends Controller
     public function store(Request $request)
     {
         $organization = new Organization;
-        $organization->name= $request;
+        $organization->name= $request->get('OrganizationName');
         $organization->save();
-        return redirect('/country');
+        return redirect('/organization');
     }
 }
