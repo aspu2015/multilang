@@ -14,15 +14,13 @@
                         </div>
                     @endif
                     
-                    <form action="/organization/store" method="POST" enctype="multipart/form-data">
+                    <form action="/organization/{{$organization->id}}/update" method="POST" enctype="multipart/form-data">
                         @csrf
-                        
                         <div class="form-group">
-                                <label for="name">Отображаемый тип органзизации:</label>
-                                <input type="text" class="form-control" id="name" name="name" aria-describedby="descriptionHelp" placeholder="Введите тип организации" >
-                                
+                            <label for="OrganizationName">Отображаемый тип организации:</label>
+                            <input type="text" class="form-control" id="name" name="name" aria-describedby="descriptionHelp" placeholder="Введите тип организации " value="{{$organization->name}}" >    
                         </div>
-                        <input type="submit" value="Создать">
+                        <input type="submit" value="Обновить">
                     </form>
                     <hr>
                     

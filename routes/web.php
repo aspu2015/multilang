@@ -56,7 +56,7 @@ Route::get('/country/{id}/edit','CountryController@edit');
 Route::post('/country/{id}/update','CountryController@update');
 Route::post('/country/{id}/destroy','CountryController@destroy');
 
-Route::get('/organization', 'OrganizationController@index');
+Route::get('/organization', 'OrganizationController@index')->name('LanguageController.index');
 Route::get('/organization/create','OrganizationController@create')->name('OrganizationController.create');
 Route::post('/organization/store', 'OrganizationController@store')->name('OrganizationController.store');
 Route::get('/organization/{id}/edit', 'OrganizationController@edit')->name('LanguageController.edit');

@@ -38,6 +38,12 @@
                 <a class="navbar-brand" href="{{ url('/lang') }}">
                     Языки
                 </a>
+                <a class="navbar-brand" href="{{ url('/organization') }}">
+                    Типы организаций
+                </a>
+                <a class="navbar-brand" href="{{ url('/country') }}">
+                    Страны
+                </a>
                 
                 
                 
