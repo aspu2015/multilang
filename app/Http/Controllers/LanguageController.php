@@ -38,12 +38,9 @@ class LanguageController extends Controller
     {
         $lang = new Language;
         $lang->langName = $request->get('langName');
-        
         $filePath = ImageService::saveImage($request,'file');
-        
         $lang->picturePath =$filePath;
         $lang->save();
-
         return redirect('/lang');
     }
 

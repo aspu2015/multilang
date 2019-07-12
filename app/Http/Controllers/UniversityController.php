@@ -58,7 +58,6 @@ class UniversityController extends Controller
 
     public function edit($id){
         $currentUniversity = University::with('translation')->find($id);
-        
         return View('universities.UniversityEdit',[
             'university' => $currentUniversity
         ]);
@@ -85,9 +84,7 @@ class UniversityController extends Controller
         $university->description = $request->get('universityDescription');
         $university->geolocationX = $request->get('universityLatitude');
         $university->geolocationY = $request->get('universityLongitude');
-
         $university->save();
-
         return redirect('/home');
     }
 

@@ -31,8 +31,6 @@ class TranslationController extends Controller
     public function create($id)
     {
         $availableLang = Language::getAvalibleLangs($id);
-
-        // dd($availableLang);
         return view('translations.TranslationCreate',[
             'langs' => $availableLang,
             'university_id' => $id
@@ -52,9 +50,7 @@ class TranslationController extends Controller
         $translation->language_id = $request->get('language_id');
         $translation->name = $request->get('universityName');
         $translation->text = $request->get('universityDescription');
-
         $translation->save();
-
         return redirect("/university/$id/edit");
     }
 
@@ -100,9 +96,7 @@ class TranslationController extends Controller
         $translation->language_id = $request->get('language_id');
         $translation->name = $request->get('universityName');
         $translation->text = $request->get('universityDescription');
-
         $translation->save();
-
         return redirect("/university/$translation->university_id/edit");
     }
 

@@ -20,13 +20,15 @@ class OrganizationController extends Controller
         return view('organization.create');
     }
 
-    public function edit($id){
+    public function edit($id)
+    {
         return View('organization.edit',[
             'organization' => Organization::find($id)
         ]);
     }
 
-    public function update(Request $request, $id){
+    public function update(Request $request, $id)
+    {
         $organization = Organization::find($id);
         $organization->name = $request->get('name');
         $organization->save();
