@@ -111,5 +111,14 @@ class UniversityController extends Controller
         University::find($id)->delete();
         return redirect('/home');
     }
+
+    public function getData(){
+        $organizations = Organization::all();
+        $country = Country::all();
+        return view('/welcome',[
+            'organizations' => $organizations,
+            'country' => $country
+        ]);
+    }
 }
 

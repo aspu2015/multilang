@@ -15,6 +15,17 @@
         </script>
 
         <script src="{{ asset('js/map/yandexMap.js')}}"></script>
+
+
+        <!-- 16.07.2019 multiselect (checkbox) -->
+        <script src="{{ asset('bootstrap-multiselect-master/docs/js/prettify.min.js')}}"></script>
+        <script src="{{ asset('bootstrap-multiselect-master/dist/js/bootstrap-multiselect.js')}}"></script>
+        <link href="{{ asset('bootstrap-multiselect-master/docs/css/prettify.min.css')}}" rel="stylesheet">
+        <link href="{{ asset('bootstrap-multiselect-master/dist/css/bootstrap-multiselect.css')}}" rel="stylesheet">
+        <link href="{{ asset('bootstrap-multiselect-master/docs/css/bootstrap-3.3.2.min.css')}}" rel="stylesheet">
+        <!-- 16.07.2019 multiselect (checkbox) -->
+
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
@@ -70,6 +81,10 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            .myhr {
+                size: 2px;
+                color: #ff6b6f;
+            }
         </style>
     </head>
     <body>
@@ -94,7 +109,35 @@
                 </div>
                 
 
+                <select id="example-getting-started" multiple="multiple">
+                @foreach ($organizations as $item)   
+                    <option value="{{$item->id}}"> {{$item->name}}</option>
+                @endforeach
+                </select>
+                <hr>
+                <select id="example-getting-started1" multiple="multiple">
+                @foreach ($country as $item)   
+                    <option value="{{$item->id}}"> {{$item->name}}</option>
+                @endforeach
+                </select>
+                <hr>
+
                 <div id="map" style="width: 600px; height: 400px"></div>
+                
+
+
+                <script type="text/javascript">
+                $(document).ready(function() {
+                    $('#example-getting-started').multiselect();
+                    $('#example-getting-started1').multiselect();
+                });
+                </script>
+
+                
+
+
+
+
             </div>
             
         </div>

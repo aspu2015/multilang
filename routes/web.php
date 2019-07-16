@@ -62,3 +62,5 @@ Route::post('/organization/store', 'OrganizationController@store')->name('Organi
 Route::get('/organization/{id}/edit', 'OrganizationController@edit')->name('LanguageController.edit');
 Route::post('/organization/{id}/update', 'OrganizationController@update')->name('OrganizationController.update');
 Route::post('/organization/{id}/destroy', 'OrganizationController@destroy')->name('OrganizationController.destroy');
+
+Route::get('/', 'UniversityController@getData')->name('UniversityController.getData');
