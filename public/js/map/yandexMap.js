@@ -45,25 +45,18 @@ $(document).ready(function(){
             
             let geodata = [];
             for(var i = 0; i < data.features.length; i++){
-                if (data.features[i].organization == 2) {
+                if (data.features[i].organization == 1) {
                 geodata[i] = new ymaps.Placemark(data.features[i].geometry.coordinates, 
                     data.features[i].properties, 
                     {clusterDisableClickZoom: true,
                         iconLayout: 'default#image',
-                        iconImageHref: 'staticImages/flag.png',
-                        visible: true                       
-                    }); }
-                else {
-                    geodata[i] = new ymaps.Placemark(data.features[i].geometry.coordinates, 
-                        data.features[i].properties, 
-                        {clusterDisableClickZoom: true,
-                            iconLayout: 'default#image',
-                            iconImageHref: 'staticImages/flag.png',
-                            visible: false                       
-                        });
+                        iconImageHref: 'staticImages/flag.png',                      
+                    }); 
+                    clusterer.add(geodata[i]);
                 }
             }
-            clusterer.add(geodata);
+            //clusterer.add(geodata);
+            console.log(geodata);
             myMap.geoObjects.add(clusterer);
         });
 
