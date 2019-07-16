@@ -20,6 +20,7 @@ class UniversityCollection
             $this->features[] = [
                 "type"=>"Feature",
                 "id"=>$i,
+                "organization"=>$currentUniversity->organization_id, ////// 16.07.19 22:29 /////////////
                 "universityId"=>$currentUniversity->id,
                 "geometry"=>[
                     "type"=>"Point",

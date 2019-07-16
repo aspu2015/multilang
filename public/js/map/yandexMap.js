@@ -42,13 +42,26 @@ $(document).ready(function(){
         }).done(function(data) {
             data = JSON.parse(data);
             console.log(data);
+            
             let geodata = [];
             for(var i = 0; i < data.features.length; i++){
+                if (data.features[i].organization == 2) {
                 geodata[i] = new ymaps.Placemark(data.features[i].geometry.coordinates, 
                     data.features[i].properties, 
                     {clusterDisableClickZoom: true,
                         iconLayout: 'default#image',
-                        iconImageHref: 'staticImages/flag.png'});
+                        iconImageHref: 'staticImages/flag.png',
+                        visible: true                       
+                    }); }
+                else {
+                    geodata[i] = new ymaps.Placemark(data.features[i].geometry.coordinates, 
+                        data.features[i].properties, 
+                        {clusterDisableClickZoom: true,
+                            iconLayout: 'default#image',
+                            iconImageHref: 'staticImages/flag.png',
+                            visible: false                       
+                        });
+                }
             }
             clusterer.add(geodata);
             myMap.geoObjects.add(clusterer);
