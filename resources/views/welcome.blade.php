@@ -109,13 +109,13 @@
                 </div>
                 
 
-                <select id="example-getting-started" multiple="multiple">
+                <select id="organizationChoice" multiple="multiple">
                 @foreach ($organizations as $item)   
                     <option value="{{$item->id}}"> {{$item->name}}</option>
                 @endforeach
                 </select>
                 <hr>
-                <select id="example-getting-started1" multiple="multiple">
+                <select id="countryChoice" multiple="multiple">
                 @foreach ($country as $item)   
                     <option value="{{$item->id}}"> {{$item->name}}</option>
                 @endforeach
@@ -128,8 +128,8 @@
 
                 <script type="text/javascript">
                 $(document).ready(function() {
-                    $('#example-getting-started').multiselect();
-                    $('#example-getting-started1').multiselect();
+                    $('#organizationChoice').multiselect();
+                    $('#countryChoice').multiselect();
                 });
                 </script>
 

@@ -19,30 +19,24 @@ $(document).ready(function(){
             });
 
 
+
+        getPlaceMark();
+        $('.multiselect-native-select').click(getPlaceMark); 
+        /// вызов функции по клику на выпадающем меню ///         
         
-            // clusterer.options.set({
-            //     gridSize: 128,
-            //     clusterDisableClickZoom: true,
-            //     iconLayout: 'default#image',
-            //     iconImageHref: 'images/flag.png',
-            //     iconImageSize: [140, 45],
-            //     iconImageOffset: [-3, -42]
-            // });
-         
-            
-        // Чтобы задать опции одиночным объектам и кластерам,
-        // обратимся к дочерним коллекциям ObjectManager.
-        //objectManager.objects.options.set('preset', 'islands#greenDotIcon');
-        //objectManager.clusters.options.set('preset', 'islands#greenClusterIcons');
-        
-        //myMap.geoObjects.add(clusterer);
+           
+
+
+        function getPlaceMark() {
+
+        myMap.geoObjects.removeAll(); /// удаляем метки перед созданием новых ///
+        clusterer.removeAll();
 
         $.ajax({
             url: "/api/geodata"
         }).done(function(data) {
             data = JSON.parse(data);
-            console.log(data);
-            
+            console.log(data);            
             let geodata = [];
             for(var i = 0; i < data.features.length; i++){
                 if (data.features[i].organization == 2) {
@@ -52,20 +46,14 @@ $(document).ready(function(){
                         iconLayout: 'default#image',
                         iconImageHref: 'staticImages/flag.png',
                         visible: true                       
-                    }); }
-                else {
-                    geodata[i] = new ymaps.Placemark(data.features[i].geometry.coordinates, 
-                        data.features[i].properties, 
-                        {clusterDisableClickZoom: true,
-                            iconLayout: 'default#image',
-                            iconImageHref: 'staticImages/flag.png',
-                            visible: false                       
-                        });
+                    }); 
+
+                    clusterer.add(geodata[i]);
                 }
             }
-            clusterer.add(geodata);
             myMap.geoObjects.add(clusterer);
         });
+    }
 
     }
 });
