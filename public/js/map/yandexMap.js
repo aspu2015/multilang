@@ -21,25 +21,46 @@ $(document).ready(function(){
 
 
         getPlaceMark();
-        $('.multiselect-native-select').click(getPlaceMark); 
-        /// вызов функции по клику на выпадающем меню ///         
-        
-           
+        //$('.multiselect-native-select').click(getPlaceMark); 
+        /// вызов функции по клику на выпадающем меню ///   
+        //$('.multiselect-native-select').click(getPlaceMark);
+        $('.multiselect-native-select .btn-group ul li a label input').click(getPlaceMark);
 
+      
 
         function getPlaceMark() {
 
         myMap.geoObjects.removeAll(); /// удаляем метки перед созданием новых ///
         clusterer.removeAll();
 
+       
+
         $.ajax({
             url: "/api/geodata"
         }).done(function(data) {
+
+            var selectedOrganization = document.querySelectorAll('#org .multiselect-native-select .btn-group'+
+            ' ul li[class="active"] a label input[value]');
+            var selectedCountry = document.querySelectorAll('#countrych .multiselect-native-select .btn-group'+
+            ' ul li[class="active"] a label input[value]');
+            var selectedOrgArray = [];
+            var selectedCountryArray = [];
+            for (var i = 0; i < selectedOrganization.length; i++) {
+                selectedOrgArray.push(+selectedOrganization[i].value);
+            }
+            for (var i = 0; i < selectedCountry.length; i++) {
+                selectedCountryArray.push(+selectedCountry[i].value);
+            }
+            console.log(selectedOrgArray);
+            console.log(selectedCountryArray);
+
+
             data = JSON.parse(data);
             console.log(data);            
             let geodata = [];
             for(var i = 0; i < data.features.length; i++){
-                if (data.features[i].organization == 2) {
+                if (selectedOrgArray.indexOf(data.features[i].organization) != -1
+                && selectedCountryArray.indexOf(data.features[i].country) != -1) {
                 geodata[i] = new ymaps.Placemark(data.features[i].geometry.coordinates, 
                     data.features[i].properties, 
                     {clusterDisableClickZoom: true,

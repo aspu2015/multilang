@@ -109,18 +109,28 @@
                 </div>
                 
 
+
+                <div id="org"> Тип организации
                 <select id="organizationChoice" multiple="multiple">
                 @foreach ($organizations as $item)   
                     <option value="{{$item->id}}"> {{$item->name}}</option>
                 @endforeach
                 </select>
+                </div>
+
                 <hr>
+
+                <div id="countrych"> Страна
                 <select id="countryChoice" multiple="multiple">
                 @foreach ($country as $item)   
                     <option value="{{$item->id}}"> {{$item->name}}</option>
                 @endforeach
                 </select>
+                </div>
                 <hr>
+
+
+
 
                 <div id="map" style="width: 600px; height: 400px"></div>
                 
