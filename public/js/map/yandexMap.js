@@ -30,14 +30,16 @@ $(document).ready(function(){
 
         function getPlaceMark() {
 
-        myMap.geoObjects.removeAll(); /// удаляем метки перед созданием новых ///
-        clusterer.removeAll();
+        
 
        
 
         $.ajax({
             url: "/api/geodata"
         }).done(function(data) {
+
+            myMap.geoObjects.removeAll(); /// удаляем метки перед созданием новых ///
+            clusterer.removeAll();
 
             var selectedOrganization = document.querySelectorAll('#org .multiselect-native-select .btn-group'+
             ' ul li[class="active"] a label input[value]');

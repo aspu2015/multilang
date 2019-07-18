@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Organization;
 
 class OrganizationController extends Controller
 {
+
+    public function __construct() //// Проверка авторизации ////
+    {
+        $this->middleware('auth');
+    }
 
     public function index()
     {
