@@ -109,18 +109,28 @@
                 </div>
                 
 
-                <select id="example-getting-started" multiple="multiple">
+
+                <div id="org"> Тип организации
+                <select id="organizationChoice" multiple="multiple">
                 @foreach ($organizations as $item)   
                     <option value="{{$item->id}}"> {{$item->name}}</option>
                 @endforeach
                 </select>
+                </div>
+
                 <hr>
-                <select id="example-getting-started1" multiple="multiple">
+
+                <div id="countrych"> Страна
+                <select id="countryChoice" multiple="multiple">
                 @foreach ($country as $item)   
                     <option value="{{$item->id}}"> {{$item->name}}</option>
                 @endforeach
                 </select>
+                </div>
                 <hr>
+
+
+
 
                 <div id="map" style="width: 600px; height: 400px"></div>
                 
@@ -128,8 +138,8 @@
 
                 <script type="text/javascript">
                 $(document).ready(function() {
-                    $('#example-getting-started').multiselect();
-                    $('#example-getting-started1').multiselect();
+                    $('#organizationChoice').multiselect();
+                    $('#countryChoice').multiselect();
                 });
                 </script>
 

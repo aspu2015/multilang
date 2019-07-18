@@ -63,4 +63,6 @@ Route::get('/organization/{id}/edit', 'OrganizationController@edit')->name('Lang
 Route::post('/organization/{id}/update', 'OrganizationController@update')->name('OrganizationController.update');
 Route::post('/organization/{id}/destroy', 'OrganizationController@destroy')->name('OrganizationController.destroy');
 
-Route::get('/', 'UniversityController@getData')->name('UniversityController.getData');
+Route::get('/', 'UniversityController@getData')->name('UniversityController.getData'); // Фильтрация меток
+
+Route::get('/universitytable', 'UniversityTableController@index')->name('UniversityTableController.index');

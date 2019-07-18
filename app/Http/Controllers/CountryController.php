@@ -9,6 +9,12 @@ use PHPUnit\Framework\Constraint\Count;
 
 class CountryController extends Controller
 {
+    public function __construct() //// Проверка авторизации ////
+    {
+        $this->middleware('auth');
+    }
+
+
     public function index(){
         return View('country.index',[
             'countries' => Country::get()
