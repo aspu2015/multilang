@@ -20,7 +20,8 @@ class UniversityTable extends Model
         // ->get();
 
         return DB::select('select universities.name, universities.description, 
-        universities.organization_id, universities.id, organizations.id from
+        universities.organization_id, universities.id, organizations.id,
+         organizations.name as orgname from
         universities,organizations where universities.organization_id=organizations.id');
     }
 

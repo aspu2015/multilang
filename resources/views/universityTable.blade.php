@@ -30,7 +30,7 @@
                         </thead>
                         
                         @foreach ($universities as $item)
-                        dump({{$universities}})
+
                             <tr>
                                 <td>
                                     {{$item->name}}
@@ -39,7 +39,7 @@
                                     {{$item->description}}
                                 </td>
                                 <td>
-                                    {{$item->organization_id}}
+                                    {{$item->orgname}}
                                 </td>
                                 <td>
                                 <a href="/university/{{$item->id}}/edit">редактировать</a>
