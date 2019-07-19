@@ -66,3 +66,4 @@ Route::post('/organization/{id}/destroy', 'OrganizationController@destroy')->nam
 Route::get('/', 'UniversityController@getData')->name('UniversityController.getData'); // Фильтрация меток
 
 Route::get('/universitytable', 'UniversityTableController@index')->name('UniversityTableController.index');
+Route::get('/tableuniversity/data', 'UniversityTableController@getData')->name('getData');

@@ -14,9 +14,17 @@ class UniversityTableController extends Controller
     public function index()
     {
         $universities = UniversityTable::getAllUniversities();
+        $organizations = UniversityTable::getAllOrganizations();
+        $countries = UniversityTable::getAllCountries();
         return view('universityTable',[
-            'universities' => $universities
-            
+            'universities' => $universities,
+            'organizations' => $organizations,
+            'countries' => $countries           
         ]);
-    }    
+    }
+
+    public function getData() {
+        $all = UniversityTable::getAllUniversities();
+        return json_encode($all);
+    }
 }

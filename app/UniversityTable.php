@@ -26,6 +26,16 @@ class UniversityTable extends Model
         universities.country_id=countries.id');
     }
 
+    public static function getAllOrganizations() {
+        return DB::table('organizations')
+        ->get();
+    }
+
+    public static function getAllCountries() {
+        return DB::table('countries')
+        ->get();;
+    }
+
     // public function translation(){
     //     return $this->hasMany('\App\Translation');
     // }
