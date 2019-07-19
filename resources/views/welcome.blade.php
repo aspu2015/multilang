@@ -14,7 +14,7 @@
         <script src="https://api-maps.yandex.com/2.1/?apikey=1f0064eb-6c20-41d7-87b9-c25967a30cd1&lang=ru_RU" type="text/javascript">
         </script>
 
-        <script src="{{ asset('js/map/yandexMap.js')}}"></script>
+        
 
 
         <!-- 16.07.2019 multiselect (checkbox) -->
@@ -88,6 +88,7 @@
         </style>
     </head>
     <body>
+        <script src="{{ asset('js/map/yandexMap.js')}}"></script>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">

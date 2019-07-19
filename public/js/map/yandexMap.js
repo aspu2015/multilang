@@ -19,13 +19,13 @@ $(document).ready(function(){
             });
 
 
-
-        getPlaceMark();
+        
+        //getPlaceMark();
         //$('.multiselect-native-select').click(getPlaceMark); 
         /// вызов функции по клику на выпадающем меню ///   
         //$('.multiselect-native-select').click(getPlaceMark);
         $('.multiselect-native-select .btn-group ul li a label input').click(getPlaceMark);
-
+            
       
 
         function getPlaceMark() {
@@ -53,12 +53,12 @@ $(document).ready(function(){
             for (var i = 0; i < selectedCountry.length; i++) {
                 selectedCountryArray.push(+selectedCountry[i].value);
             }
-            console.log(selectedOrgArray);
-            console.log(selectedCountryArray);
+            //console.log(selectedOrgArray);
+            //console.log(selectedCountryArray);
 
 
             data = JSON.parse(data);
-            console.log(data);            
+            //console.log(data);            
             let geodata = [];
             for(var i = 0; i < data.features.length; i++){
                 if (selectedOrgArray.indexOf(data.features[i].organization) != -1
