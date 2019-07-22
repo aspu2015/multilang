@@ -19,7 +19,9 @@ $(document).ready(function(){
             });
 
 
-        
+        //$("ul li").attr("class","active");
+        //$("select option").attr("selected","selected");
+        getPlaceMark();
         //getPlaceMark();
         //$('.multiselect-native-select').click(getPlaceMark); 
         /// вызов функции по клику на выпадающем меню ///   

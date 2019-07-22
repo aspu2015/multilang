@@ -76,7 +76,7 @@
                     <div id="org">
                         <select id="organizationChoice" multiple="multiple">
                         @foreach ($organizations as $item)   
-                            <option value="{{$item->name}}">{{$item->name}}</option>
+                            <option value="{{$item->name}}" selected="selected">{{$item->name}}</option>
                         @endforeach
                         </select>
                     </div>
@@ -85,7 +85,7 @@
                     <div id="countrych">
                         <select id="countryChoice" multiple="multiple">
                         @foreach ($countries as $item)   
-                            <option value="{{$item->name}}">{{$item->name}}</option>
+                            <option value="{{$item->name}}" selected="selected">{{$item->name}}</option>
                         @endforeach
                         </select>
                     </div>
@@ -114,8 +114,9 @@
 
                 <script type="text/javascript">
                 $(document).ready(function() {
-                    $('#organizationChoice').multiselect();
-                    $('#countryChoice').multiselect();
+                    $('#organizationChoice').multiselect({buttonWidth: '150px'});
+                    $('#countryChoice').multiselect({buttonWidth: '150px'});
+                    
                 });
                 </script>
                     

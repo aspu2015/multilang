@@ -45,6 +45,9 @@
                 <a class="navbar-brand" href="{{ url('/country') }}">
                     Страны
                 </a>
+                <a class="navbar-brand" href="{{ url('/info_translation') }}">
+                    Переводы
+                </a>
                 
                 
                 

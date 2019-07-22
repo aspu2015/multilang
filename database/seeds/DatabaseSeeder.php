@@ -43,17 +43,63 @@ class DatabaseSeeder extends Seeder
             'name'=>'АГУ',
             'text'=>'АГУ- один из лучших университетов в Астрахани'
         ]);
+
         DB::table('organizations')->insert([
-            'name'=>'Бюджетная',
+            'name'=>'Бюджетная'
         ]);
+
         DB::table('organizations')->insert([
-            'name'=>'Коммерческая',
+            'name'=>'Коммерческая'
         ]);
+
         DB::table('countries')->insert([
-            'name'=>'Россия',
+            'name'=>'Россия'
         ]);
+
         DB::table('countries')->insert([
-            'name'=>'Франция',
+            'name'=>'Франция'
+        ]);
+
+        DB::table('info_category')->insert([
+            'name'=>'Главная'
+        ]);
+
+        DB::table('info_sections')->insert([
+            'category_id' => '1',
+            'name'=>'ИнфоБлок1'
+        ]);
+
+        DB::table('info_sections')->insert([
+            'category_id' => '1',
+            'name'=>'ИнфоБлок2'
+        ]);
+        
+        DB::table('info_translation')->insert([
+            'category_id'=>1,
+            'language_id'=>1,
+            'section_id'=>'1',
+            'text'=>'summertime sadness ss su summertime'
+        ]);
+
+        DB::table('info_translation')->insert([
+            'category_id'=>1,
+            'language_id'=>1,
+            'section_id'=>'2',
+            'text'=>'Sooooomebody ...'
+        ]);
+
+        DB::table('info_translation')->insert([
+            'category_id'=>1,
+            'language_id'=>2,
+            'section_id'=>'1',
+            'text'=>'летняя печаааааааль'
+        ]);
+
+        DB::table('info_translation')->insert([
+            'category_id'=>1,
+            'language_id'=>2,
+            'section_id'=>'2',
+            'text'=>'САААААМБАДИ ванс толд миии'
         ]);
     }
 }

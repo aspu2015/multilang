@@ -109,12 +109,13 @@
                     Universities
                 </div>
                 
-
+                <a href="{{ url('/universitytable') }}">Список организаций</a>
+                <hr>
 
                 <div id="org"> Тип организации
                 <select id="organizationChoice" multiple="multiple">
                 @foreach ($organizations as $item)   
-                    <option value="{{$item->id}}"> {{$item->name}}</option>
+                    <option value="{{$item->id}}" selected="selected"> {{$item->name}}</option>
                 @endforeach
                 </select>
                 </div>
@@ -124,7 +125,7 @@
                 <div id="countrych"> Страна
                 <select id="countryChoice" multiple="multiple">
                 @foreach ($country as $item)   
-                    <option value="{{$item->id}}"> {{$item->name}}</option>
+                    <option value="{{$item->id}}" selected="selected"> {{$item->name}}</option>
                 @endforeach
                 </select>
                 </div>
