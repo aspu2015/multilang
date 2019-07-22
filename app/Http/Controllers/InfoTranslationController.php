@@ -35,5 +35,13 @@ class InfoTranslationController extends Controller
         ]);
     }
 
+    public function getTranslations($id)
+    {
+        $sections = InfoTranslation::getSections($id);
+        return view('infoTranslation.show', [
+            'sections' => $sections
+        ]);
+    }
+
     
 }
