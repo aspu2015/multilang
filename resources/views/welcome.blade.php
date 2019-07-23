@@ -86,7 +86,7 @@
 
             .m-b-md {
                 margin-bottom: 30px;
-                margin-top: 350px;
+                margin-top: 750px;
             }
             .myhr {
                 size: 2px;
@@ -168,8 +168,9 @@
 
 
                 <div id="map" style="width: 600px; height: 400px"></div>
+                <hr>
                 
-
+                <div id="textBody2"></div>
 
                 <script type="text/javascript">
                 $(document).ready(function() {
