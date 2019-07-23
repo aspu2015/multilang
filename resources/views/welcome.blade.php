@@ -126,6 +126,7 @@
                 <hr>
 
                 <div id="textBody"></div>
+                <hr>
 
                 <div id="org"> Тип организации
                 <select id="organizationChoice" multiple="multiple">

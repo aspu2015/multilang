@@ -36,7 +36,7 @@ $(document).ready(function(){
             
             let langName = translations[i].langName;
             let picturePath = translations[i].picturePath;
-            $('#webmenu').append($('<option value="'+langName+'" data-image="'+picturePath+'">'+langName+'</option>'));     
+            $('#webmenu').append($('<option value="'+langName+'" data-image="'+picturePath+'">'+langName+'</option>'));    
             if(firstValue == null)
                 firstValue = langName;
         }
