@@ -27,7 +27,7 @@ $(document).ready(function(){
     
 
     $.ajax({
-        url: "/api/langs?id="+findGetParameter('id')
+        url: "/api/langs?id=99999"
     }).done(function(data) {
         var translations = JSON.parse(data);
         langs = translations;
@@ -47,7 +47,7 @@ $(document).ready(function(){
         });
 
         try {
-            $("body select").msDropDown();
+            $("body select[id='webmenu']").msDropDown();
         } catch(e) {
             alert(e.message);
         }

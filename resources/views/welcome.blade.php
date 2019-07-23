@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>ASU</title>
 
         <!-- js -->
@@ -15,6 +15,12 @@
         </script>
 
         
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/dd.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/skin2.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/flags.css') }}" />
+        <script src="{{ asset('js/langs/jquery.dd.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('js/langs/jquery.dd.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('js/langs/info_translations.js')}}"></script>
 
 
         <!-- 16.07.2019 multiselect (checkbox) -->
@@ -109,8 +115,17 @@
                     Universities
                 </div>
                 
+                <div class="choose-lang-div">
+                    <p class="chooseLang" >Choose your Language: </p>
+                    <select id="webmenu"  name = "webmenu">
+                    
+                    </select>
+                </div>
+
                 <a href="{{ url('/universitytable') }}">Список организаций</a>
                 <hr>
+
+                <div id="textBody"></div>
 
                 <div id="org"> Тип организации
                 <select id="organizationChoice" multiple="multiple">
