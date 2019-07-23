@@ -55,6 +55,8 @@ $(document).ready(function(){
             onOptionClick(this.value);
         });
 
+
+
         try {
             $("body select[id='webmenu']").msDropDown();
         } catch(e) {
