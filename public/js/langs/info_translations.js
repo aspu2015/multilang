@@ -29,6 +29,7 @@ $(document).ready(function(){
     $.ajax({
         url: "/api/langs?id=99999"
     }).done(function(data) {
+        //var langs = {}; ////
         var translations = JSON.parse(data);
         langs = translations;
         let firstValue = null;
@@ -36,7 +37,8 @@ $(document).ready(function(){
             
             let langName = translations[i].langName;
             let picturePath = translations[i].picturePath;
-            $('#webmenu').append($('<option value="'+langName+'" data-image="'+picturePath+'">'+langName+'</option>'));    
+            $('#webmenu').append($('<option value="'+langName+'" data-image="'+picturePath+'">'+langName+'</option>')); 
+            $('.langs').append($('<div value="'+langName+'"><img src="'+picturePath+'">'+langName+'</div>'));    
             if(firstValue == null)
                 firstValue = langName;
         }

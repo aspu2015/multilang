@@ -86,10 +86,25 @@
 
             .m-b-md {
                 margin-bottom: 30px;
+                margin-top: 350px;
             }
             .myhr {
                 size: 2px;
                 color: #ff6b6f;
+            }
+            .langs {
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+            .langs div{
+                display: inline-block;
+                padding-right: 10px;
+                padding-left: 10px;
+                font-size: 18px;
+            }
+            .langs div img{
+                padding-right: 5px;
+                padding-left: 5px;
             }
         </style>
     </head>
@@ -115,13 +130,15 @@
                     Universities
                 </div>
                 
+                <div class="langs"></div>
                 <div class="choose-lang-div">
                     <p class="chooseLang" >Choose your Language: </p>
                     <select id="webmenu"  name = "webmenu">
                     
                     </select>
                 </div>
-
+                <hr>
+                
                 <a href="{{ url('/universitytable') }}">Список организаций</a>
                 <hr>
 
