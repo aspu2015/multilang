@@ -86,7 +86,7 @@
 
             .m-b-md {
                 margin-bottom: 30px;
-                margin-top: 750px;
+                margin-top: 450px;
             }
             .myhr {
                 size: 2px;

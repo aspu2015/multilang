@@ -31,6 +31,16 @@
                                 
                         </div>
                         <div class="form-group">
+                                <label for="universityCountry">Страна:</label>
+                                <input type="text" class="form-control" id="universityCountry" name="universityCountry" aria-describedby="descriptionHelp" placeholder="Страна " >
+                                
+                        </div>
+                        <div class="form-group">
+                                <label for="universityOrganization">Тип организации:</label>
+                                <input type="text" class="form-control" id="universityOrganization" name="universityOrganization" aria-describedby="descriptionHelp" placeholder="Тип организации " >
+                                
+                        </div>
+                        <div class="form-group">
                                 <label for="universityDescription">Описание Университета:</label>
                                 <textarea name="universityDescription" id="universityDescription" ></textarea>
                                 

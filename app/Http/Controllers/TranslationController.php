@@ -50,6 +50,8 @@ class TranslationController extends Controller
         $translation->language_id = $request->get('language_id');
         $translation->name = $request->get('universityName');
         $translation->text = $request->get('universityDescription');
+        $translation->country = $request->get('universityCountry');
+        $translation->organization = $request->get('universityOrganization');
         $translation->save();
         return redirect("/university/$id/edit");
     }

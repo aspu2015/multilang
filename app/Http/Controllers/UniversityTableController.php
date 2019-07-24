@@ -17,9 +17,8 @@ class UniversityTableController extends Controller
         $organizations = UniversityTable::getAllOrganizations();
         $countries = UniversityTable::getAllCountries();
         return view('universityTable',[
-            'universities' => $universities,
-            'organizations' => $organizations,
-            'countries' => $countries           
+            'universities' => $universities
+                     
         ]);
     }
 

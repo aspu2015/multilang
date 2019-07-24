@@ -19,11 +19,11 @@ class UniversityTable extends Model
         // ->join('organizations','universities.organization_id','=','organizations.id')
         // ->get();
 
-        return DB::select('select universities.name, universities.description, 
-        universities.organization_id, universities.id, organizations.id, 
-        organizations.name as orgname, countries.name as countryname from
-        universities,organizations,countries where universities.organization_id=organizations.id and 
-        universities.country_id=countries.id');
+        return DB::select('select translations.*, languages.langName, 
+        languages.picturePath 
+        from translations, languages 
+        where translations.language_id = languages.id 
+        and university_id <> 99999');
     }
 
     public static function getAllOrganizations() {

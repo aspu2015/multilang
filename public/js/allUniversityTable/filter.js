@@ -39,6 +39,12 @@ $(document).ready(function(){
             }         
 
 
+            // $(document).ready(function() {
+            //     $('#organizationChoice').multiselect({buttonWidth: '150px'});
+            //     $('#countryChoice').multiselect({buttonWidth: '150px'});                    
+            // });
     }
+
+    
 });
 
