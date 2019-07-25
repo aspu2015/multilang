@@ -40,7 +40,6 @@ function onOptionClick(langName){
     for (var i = 0; i < options.length; i++) {
         var tr = document.createElement('tr');
         for (var j = 0; j < options[i].length; j++) {
-            console.log(options[i][j]);
             var td = document.createElement('td');
             td.innerHTML = options[i][j];
             tr.appendChild(td);

@@ -16,8 +16,19 @@
                             {{!! session('status') !!}}
                         </div>
                     @endif
-
-
+                
+                </div>
+                
+                
+            </div>
+            <div class="card">
+                <div id="textBody" class="card-body">
+                    <div id="country" class="card-body"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div id="textBody" class="card-body">
+                    <div id="organization" class="card-body"></div>
                 </div>
             </div>
         </div>

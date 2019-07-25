@@ -55,6 +55,10 @@ $(document).ready(function(){
             onOptionClick(this.value);
         });
 
+        $('.langs div').on('click', function() {
+            onOptionClick(this.value);
+        });
+
 
 
         try {
