@@ -7,17 +7,8 @@ use DB;
 
 class UniversityTable extends Model
 {
-    //
-    // public function getGeometryAsArray(){
-    //     return [$this->geolocationX, $this->geolocationY] ;
-    // }
 
     public static function getAllUniversities(){
-        //return University::with('translation')->get();
-
-        // return DB::table('universities')
-        // ->join('organizations','universities.organization_id','=','organizations.id')
-        // ->get();
 
         return DB::select('select translations.*, languages.langName, 
         languages.picturePath 
@@ -35,8 +26,4 @@ class UniversityTable extends Model
         return DB::table('countries')
         ->get();;
     }
-
-    // public function translation(){
-    //     return $this->hasMany('\App\Translation');
-    // }
 }

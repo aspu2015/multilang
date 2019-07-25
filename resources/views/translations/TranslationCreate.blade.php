@@ -41,6 +41,11 @@
                                 
                         </div>
                         <div class="form-group">
+                                <label for="universityShortDescription">Краткое описание (таблица университетов):</label>
+                                <input type="text" class="form-control" id="universityShortDescription" name="universityShortDescription" aria-describedby="descriptionHelp" placeholder="Краткое описание " >
+                                
+                        </div>
+                        <div class="form-group">
                                 <label for="universityDescription">Описание Университета:</label>
                                 <textarea name="universityDescription" id="universityDescription" ></textarea>
                                 

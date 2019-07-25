@@ -37,6 +37,7 @@
 
         <!-- Styles -->
         <style>
+            #textBody, #textBody2{text-align:left; font-size:16px;}
             html, body {
                 background-color: #fff;
                 color: #636b6f;
@@ -71,7 +72,7 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 35px;
             }
 
             .links > a {
@@ -127,7 +128,10 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Universities
+                    Мультиязычный сайт по совокупности 
+                    образовательных, академических, 
+                    функционально смежных для них организаций
+                    Прикаспийских и иных государств
                 </div>
                 
                 <div class="langs"></div>
@@ -141,8 +145,11 @@
                 
                 <a href="{{ url('/universitytable') }}">Список организаций</a>
                 <hr>
-
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
                 <div id="textBody"></div>
+                 </div></div></div>
                 <hr>
 
                 <div id="org"> Тип организации
@@ -167,11 +174,13 @@
 
 
 
-                <div id="map" style="width: 600px; height: 400px"></div>
+                <div id="map" style="width: 100%; height: 400px"></div>
                 <hr>
-                
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
                 <div id="textBody2"></div>
-
+        </div></div></div>
                 <script type="text/javascript">
                 $(document).ready(function() {
                     $('#organizationChoice').multiselect();

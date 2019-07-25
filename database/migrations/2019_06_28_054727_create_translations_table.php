@@ -20,7 +20,10 @@ class CreateTranslationsTable extends Migration
             $table->integer('language_id');
             //$table->foreign('language_id')->references('id')->on('languages');
             $table->longText('name');
+            $table->text('shortDescription');
             $table->longText('text');
+            $table->text('country');
+            $table->text('organization');
             $table->timestamps();
         });
     }

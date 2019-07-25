@@ -25,7 +25,7 @@ function onOptionClick(langName){
             for (var j=0; j < 5; j++)
                 if (j == 0) options.push([
                     obj.name,
-                    obj.text,
+                    obj.shortDescription,
                     obj.organization,
                     obj.country
                 ]);

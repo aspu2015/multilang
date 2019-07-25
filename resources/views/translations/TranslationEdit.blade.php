@@ -28,7 +28,19 @@
                         </div>
                         <div class="form-group">
                                 <label for="universityName">Название университета:</label>
-                                <input type="text" class="form-control" id="universityName" name="universityName" aria-describedby="descriptionHelp" placeholder="Введите название университета " value={{$translation->name}}>
+                                <input type="text" class="form-control" id="universityName" name="universityName" aria-describedby="descriptionHelp" placeholder="Введите название университета " value="{{$translation->name}}">
+                        </div>
+                        <div class="form-group">
+                                <label for="universityCountry">Страна:</label>
+                                <input type="text" class="form-control" id="universityCountry" name="universityCountry" aria-describedby="descriptionHelp" placeholder="Страна " value="{{$translation->country}}">                               
+                        </div>
+                        <div class="form-group">
+                                <label for="universityOrganization">Тип организации:</label>
+                                <input type="text" class="form-control" id="universityOrganization" name="universityOrganization" aria-describedby="descriptionHelp" placeholder="Тип организации " value="{{$translation->organization}}">        
+                        </div>
+                        <div class="form-group">
+                                <label for="universityShortDescription">Краткое описание (таблица университетов):</label>
+                                <input type="text" class="form-control" id="universityShortDescription" name="universityShortDescription" aria-describedby="descriptionHelp" placeholder="Краткое описание " value="{{$translation->shortDescription}}"> 
                         </div>
                         <div class="form-group">
                                 <label for="universityDescription">Описание Университета:</label>
